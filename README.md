@@ -1,5 +1,5 @@
 # Full-Stack_Dynamic_Portfolio
-This is  a personal Portfolio project which will be developed throughout the semester
+This is  a personal Portfolio project which will be developed throughout the semester (Summer-2025)
 
 
 ![IMG_4838](https://github.com/user-attachments/assets/7dbca9a5-0156-4908-9281-b99422ec007c)
