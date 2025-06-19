@@ -1,19 +1,36 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-.header {
+/* Global Font Style */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+.menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: #43fecf;
+    background-color: #c9cbcb;
     border-bottom: 1px solid #dee2e6;
 }
-
 
 nav {
     display: flex;
     gap: 20px;
 }
 
+nav a {
+    text-decoration: none;
+    color: #333;
+}
+
+nav a:hover {
+    color: #8903cb;
+}
 
 .contact-button {
     background-color: #007bff;
@@ -23,15 +40,7 @@ nav {
     text-decoration: none;
 }
 
-nav a {
-    text-decoration: none;
-    color: #333;
-}
-nav a:hover {
-    color: #8903cb;
-}
-
-/* Profile Section Layout */
+/* Welcome Section */
 .profile-section {
     display: flex;
     justify-content: space-between;
@@ -40,86 +49,97 @@ nav a:hover {
     flex-wrap: wrap;
 }
 
-.profile-left, .profile-right {
-    flex: 1 1 45%;
+.welcome-left {
+    flex: 1 1 50%;
+    padding: 20px;
+}
+
+.welcome-text {
+    font-size: 35px;
+    font-weight: bold;
+    line-height: 1.5;
+    color: #333;
+    padding-left: 20px;
+}
+
+.welcome-text span {
+    color: #007bff;
+}
+
+.profile-right-image {
+    flex: 1 1 40%;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
 }
 
-/* Placeholder Profile Picture */
 .profile-pic {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    background-color: #ccc;
+    width: 220px;
+    height: 340px;
 }
 
-/* PNG Image with Floating Labels */
-.image-wrapper {
-    position: relative;
-    display: inline-block;
+/* Main Image Section */
+.main-image-section {
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.main-image-left {
+    flex: 1 1 10%;
+    display: flex;
+    justify-content: center;
 }
 
 .main-image {
     width: 250px;
     height: auto;
     border-radius: 20px;
-}
-
-.label {
-    position: absolute;
-    background-color: #007bff;
-    color: white;
-    padding: 6px 10px;
-    border-radius: 20px;
-    font-size: 14px;
-    font-weight: bold;
-}
-
-.left-label {
-    top: 10px;
-    left: -80px;
-    transform: rotate(-20deg);
-}
-
-.right-label {
-    bottom: 10px;
-    right: -100px;
-    transform: rotate(20deg);
-}
-
-/* CV Button */
-.download-cv {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #28a745;
-    color: white;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s;
-}
-
-.download-cv:hover {
-    background-color: #218838;
+    margin-bottom: 10px;
 }
 
 /* About Section */
-.about-section {
-    text-align: center;
-    padding: 40px 20px;
+.about-side {
+    flex: 1 1 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-right: 200px;
+    padding-left: 100px;
 }
 
-.about-section h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
+.about-side h2 {
+    font-size: 26px;
+    margin-bottom: 15px;
 }
 
-.about-section p {
-    max-width: 700px;
-    margin: auto;
+.about-text {
     font-size: 16px;
+    color: #333;
     line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Toggle Button */
+.toggle-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.toggle-button:hover {
+    background-color: #0056b3;
+}
+
+/* Hide full text by default */
+#about-full {
+    display: none;
 }
