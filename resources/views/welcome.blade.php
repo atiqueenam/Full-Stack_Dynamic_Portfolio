@@ -114,7 +114,7 @@
   <div class="contact-container">
     <div class="contact-info">
       <h2>Contact Me</h2>
-      <p>Feel free to reach out for collaborations or just a friendly hello 👋</p>
+      <p>Feel free to reach out for collaborations </p>
       <ul>
         <li><strong>Email:</strong> atique@example.com</li>
         <li><strong>Phone:</strong> +880-123-456789</li>

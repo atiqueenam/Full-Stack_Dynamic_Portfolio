@@ -33,8 +33,9 @@
         <div class="social-icons">
             <a href="https://facebook.com/scienthush" target="_blank"><i class="fab fa-facebook-f"></i></a>
             <a href="https://www.instagram.com/scienthush" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.tiktok.com/@scienthush" target="_blank"><i class="fab fa-tiktok"></i></a>
+            <a href="https://bd.linkedin.com/in/atiqueenam" target="_blank"><i class="fab fa-linkedin"></i></a>
             <a href="https://www.youtube.com/@scienthush" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://x.com/scienthush" target="_blank"><i class="fab fa-twitter"></i></a>
             <a href="mailto:atiqueenam@gmail.com"><i class="fas fa-envelope"></i></a>
         </div>
         <p class="footer-credit">© {{ date('Y') }} Atique Enam | ScienThush</p>

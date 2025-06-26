@@ -120,6 +120,7 @@ nav a:hover {
     justify-content: flex-start;
     padding-right: 200px;
     padding-left: 100px;
+    padding:70px;
 }
 
 .about-side h2 {
@@ -350,7 +351,7 @@ nav a:hover {
     border-radius: 6px;
 }
 
-/* Container styling */
+
 .modern-about-container {
   max-width: 900px;
   margin: 3rem auto;
@@ -363,7 +364,7 @@ nav a:hover {
   color: #333;
 }
 
-/* Soft abstract shapes behind */
+
 .modern-about-container::before,
 .modern-about-container::after {
   content: "";
@@ -376,19 +377,19 @@ nav a:hover {
 .modern-about-container::before {
   width: 180px;
   height: 180px;
-  background: #4f46e5; /* Indigo */
+  background: #4f46e5; 
   top: -60px;
   left: -60px;
 }
 .modern-about-container::after {
   width: 120px;
   height: 120px;
-  background: #3b82f6; /* Blue */
+  background: #3b82f6; 
   bottom: -40px;
   right: -50px;
 }
 
-/* Section title style */
+
 .section-title {
   font-size: 2.5rem;
   font-weight: 700;
@@ -400,7 +401,7 @@ nav a:hover {
   letter-spacing: 1.2px;
 }
 
-/* Paragraph style */
+
 .modern-about-container p {
   font-size: 1rem;
   line-height: 1.6;
@@ -409,7 +410,7 @@ nav a:hover {
   z-index: 1;
 }
 
-/* Skills section */
+
 .skills-title {
   margin-top: 2.5rem;
   font-size: 1.8rem;
@@ -446,13 +447,13 @@ nav a:hover {
   background-color: #c7d2fe;
 }
 
-/* Skill icons */
+
 .skill-icon {
   font-size: 1.4rem;
   color: #4338ca;
 }
 
-/* Fun Fact */
+
 .funfact-title {
   margin-top: 3rem;
   font-size: 1.8rem;
@@ -471,7 +472,6 @@ nav a:hover {
   z-index: 1;
 }
 
-/* Responsive tweaks */
 @media (max-width: 600px) {
   .modern-about-container {
     padding: 2rem 1.5rem;
@@ -482,7 +482,7 @@ nav a:hover {
 }
 
 
-/* Container */
+
 .modern-about-container {
   max-width: 900px;
   margin: 3rem auto;
@@ -494,7 +494,7 @@ nav a:hover {
   color: #333;
 }
 
-/* Section title */
+
 .section-title {
   font-size: 2.5rem;
   font-weight: 700;
@@ -503,7 +503,7 @@ nav a:hover {
   letter-spacing: 1.2px;
 }
 
-/* Info table container */
+
 .info-table {
   display: grid;
   grid-template-columns: 1fr 3fr;
@@ -513,12 +513,12 @@ nav a:hover {
   margin-bottom: 2.5rem;
 }
 
-/* Each row */
+
 .info-row {
-  display: contents; /* grid children will be direct children of grid */
+  display: contents; 
 }
 
-/* Label style */
+
 .info-label {
   font-weight: 700;
   font-size: 1.1rem;
@@ -529,20 +529,19 @@ nav a:hover {
   white-space: nowrap;
 }
 
-/* Icons in label */
 .info-label i {
   font-size: 1.3rem;
   color: #3b82f6;
 }
 
-/* Content style */
+
 .info-content {
   font-size: 1rem;
   color: #475569;
   line-height: 1.5;
 }
 
-/* Skills & fun fact styling same as before */
+
 
 .skills-title {
   margin-top: 0;
@@ -647,18 +646,18 @@ h2 {
 }
 
 .card.small {
-  width: 100px;   /* was 80px */
-  height: 120px;  /* was 100px */
+  width: 100px;  
+  height: 120px;  
 }
 
 .card.medium {
-  width: 120px;   /* was 100px */
-  height: 140px;  /* was 120px */
+  width: 120px;  
+  height: 140px;  
 }
 
 .card.large {
-  width: 170px;   /* was 140px */
-  height: 190px;  /* was 160px */
+  width: 170px;  
+  height: 190px;  
 }
 
 
