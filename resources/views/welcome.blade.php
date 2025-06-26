@@ -5,7 +5,7 @@
 
 @endpush
     <div>
-    <section id="profile-section" class="profile-section-section">
+    <section id="home" class="profile-section-section">
   <div class="abprofile-section modern-about-container">
             <div class="welcome-left">
                 <h1 class="welcome-text">
@@ -98,25 +98,39 @@
 </section>
 
 <section id="projects">
-    <h2>🚀 My Projects</h2>
+    <h3 class="section-title">🚀 My Projects</h3>
 
     <div class="project-cards">
-      <div class="card small"><img src="https://source.unsplash.com/100x100/?design" alt="Project"></div>
-      <div class="card medium"><img src="https://source.unsplash.com/120x120/?tech" alt="Project"></div>
-      <div class="card large"><img src="https://source.unsplash.com/150x150/?startup" alt="Project"></div>
-      <div class="card medium"><img src="https://source.unsplash.com/120x120/?code" alt="Project"></div>
-      <div class="card small"><img src="https://source.unsplash.com/100x100/?innovation" alt="Project"></div>
+      <div class="card small"><img src="assets/images/img1.jpg" alt="Project"></div>
+      <div class="card medium"><img src="assets/images/img2.jpg" alt="Project"></div>
+      <div class="card large"><img src="assets/images/img3.jpg" alt="Project"></div>
+      <div class="card medium"><img src="assets/images/img4.jpg" alt="Project"></div>
+      <div class="card small"><img src="assets/images/img5.jpg" alt="Project"></div>
     </div>
-
-
-    
-
   </section>
-
-
-
-
     </div>
+
+    <section id="contact">
+  <div class="contact-container">
+    <div class="contact-info">
+      <h2>Contact Me</h2>
+      <p>Feel free to reach out for collaborations or just a friendly hello 👋</p>
+      <ul>
+        <li><strong>Email:</strong> atique@example.com</li>
+        <li><strong>Phone:</strong> +880-123-456789</li>
+        <li><strong>Location:</strong> Dhaka, Bangladesh</li>
+      </ul>
+    </div>
+
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
+
 @endsection
 
 

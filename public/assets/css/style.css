@@ -16,7 +16,17 @@ body {
     align-items: center;
     padding: 20px;
     background-color: #000000;
+    height: 60px;
     border-bottom: 1px solid #dee2e6;
+
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999; 
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
 }
 
 nav {
@@ -92,7 +102,7 @@ nav a:hover {
     flex: 1 1 10%;
     display: flex;
     justify-content: center;
-    padding-left: 50px;
+    padding-left: 250px;
 }
 
 .main-image {
@@ -637,19 +647,20 @@ h2 {
 }
 
 .card.small {
-  width: 80px;
-  height: 100px;
+  width: 100px;   /* was 80px */
+  height: 120px;  /* was 100px */
 }
 
 .card.medium {
-  width: 100px;
-  height: 120px;
+  width: 120px;   /* was 100px */
+  height: 140px;  /* was 120px */
 }
 
 .card.large {
-  width: 140px;
-  height: 160px;
+  width: 170px;   /* was 140px */
+  height: 190px;  /* was 160px */
 }
+
 
 .arrow {
   font-size: 2rem;
@@ -689,3 +700,103 @@ h2 {
   color: #004c99;
   font-weight: bold;
 }
+
+#contact {
+  background: linear-gradient(135deg, #f0f8ff, #e0ecff);
+  padding: 80px 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.contact-container {
+  display: flex;
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0, 85, 170, 0.15);
+  overflow: hidden;
+  flex-wrap: wrap;
+}
+
+.contact-info {
+  flex: 1 1 40%;
+  background: #0077cc;
+  color: white;
+  padding: 40px 30px;
+}
+
+.contact-info h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.contact-info p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.contact-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-info li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.contact-form {
+  flex: 1 1 60%;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px 16px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #0077cc;
+}
+
+.contact-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+.logo{
+    height: 40px;
+    width: 150px;
+}
+.contact-form button {
+  background-color: #0077cc;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #005fa3;
+}
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+  }
+
+  .contact-info, .contact-form {
+    flex: 1 1 100%;
+  }
+}
+

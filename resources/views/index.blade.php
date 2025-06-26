@@ -17,13 +17,13 @@
 </head>
 <body>
     <header class="menu">
-            <div class="title"><b>Atique's Portfolio</b></div>
+            <div><img src="assets/images/logo.png" alt="logo" class="logo"></div>
             <nav>
                 <a href="#">Home</a>
                 <a href="#about">About me</a>
                 <a href="#projects">Projects</a>
                 <a href="#">More</a>
-                <a href="#" class="contact-button">Contact now</a>
+                <a href="#contact" class="contact-button">Contact now</a>
             </nav>
         </header>
     @yield('main-content')
