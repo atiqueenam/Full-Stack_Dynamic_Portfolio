@@ -12,23 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('experiences', function (Blueprint $table) {
-    $table->id();
-    $table->enum('type', ['job', 'internship', 'freelance', 'volunteer']);
-    $table->string('designation');
-    $table->string('organization');
-    $table->date('from_date');
-    $table->date('to_date')->nullable();
-    $table->timestamps();
-});
-
-        Schema::table('experiences', function (Blueprint $table) {
-            $table->foreign('user_id')
-                ->references('id')
-                ->on('users')
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
+            $table->id();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->enum('type', ['job', 'internship', 'freelance', 'volunteer']);
+            $table->string('designation');
+            $table->string('organization');
+            $table->date('from_date');
+            $table->date('to_date')->nullable();
+            $table->timestamps();
         });
-
     }
 
     /**

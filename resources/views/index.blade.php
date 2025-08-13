@@ -22,8 +22,18 @@
                 <a href="#">Home</a>
                 <a href="#about">About me</a>
                 <a href="#projects">Projects</a>
-                <a href="#">More</a>
+                <a href="#skills">Skills</a>
+                <a href="#gallery">Gallery</a>
                 <a href="#contact" class="contact-button">Contact now</a>
+                @guest
+                    <a href="{{ route('login') }}" style="margin-left: 20px; font-size: 12px; opacity: 0.7; color: #ccc; text-decoration: none;">Admin</a>
+                @else
+                    <a href="{{ route('dashboard') }}" style="margin-left: 20px; background: #667eea; color: white; padding: 8px 16px; border-radius: 5px; text-decoration: none;">Dashboard</a>
+                    <form method="POST" action="{{ route('logout') }}" style="display: inline;">
+                        @csrf
+                        <button type="submit" style="background: #764ba2; color: white; padding: 8px 16px; border-radius: 5px; border: none; cursor: pointer;">Logout</button>
+                    </form>
+                @endguest
             </nav>
         </header>
     @yield('main-content')

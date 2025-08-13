@@ -11,6 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
+        // Drop the existing users table if it exists
+        Schema::dropIfExists('users');
+        
+        // Create the users table with all required columns
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
