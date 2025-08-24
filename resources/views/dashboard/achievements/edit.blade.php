@@ -121,8 +121,8 @@
   <a href="{{ route('dashboard.achievements') }}" class="back-btn">← Back to Achievements</a>
   
   <div class="dashboard-header">
-    <h1>Add New Achievement</h1>
-    <p>Add your awards, certifications and recognitions</p>
+    <h1>Edit Achievement</h1>
+    <p>Update your achievement details</p>
   </div>
 
   @if ($errors->any())
@@ -136,58 +136,61 @@
     </div>
   @endif
 
-  <form method="POST" action="{{ route('dashboard.achievements.store') }}">
+  <form method="POST" action="{{ route('dashboard.achievements.update', $achievement->id) }}">
     @csrf
+    @method('PUT')
     
     <div class="form-group">
       <label for="name">Achievement Name *</label>
-      <input type="text" id="name" name="name" class="form-control" value="{{ old('name') }}" required placeholder="e.g., Best Student Award, AWS Certification">
+      <input type="text" id="name" name="name" class="form-control" value="{{ old('name', $achievement->name) }}" required placeholder="e.g., Best Student Award, AWS Certification">
     </div>
 
     <div class="form-group">
       <label for="type">Achievement Type *</label>
       <select id="type" name="type" class="form-control" required>
         <option value="">Select Type</option>
-        <option value="award" {{ old('type') == 'award' ? 'selected' : '' }}>Award</option>
-        <option value="certification" {{ old('type') == 'certification' ? 'selected' : '' }}>Certification</option>
-        <option value="recognition" {{ old('type') == 'recognition' ? 'selected' : '' }}>Recognition</option>
+        <option value="award" {{ old('type', $achievement->type) == 'award' ? 'selected' : '' }}>Award</option>
+        <option value="certification" {{ old('type', $achievement->type) == 'certification' ? 'selected' : '' }}>Certification</option>
+        <option value="recognition" {{ old('type', $achievement->type) == 'recognition' ? 'selected' : '' }}>Recognition</option>
       </select>
     </div>
 
     <div class="form-group">
       <label for="organization">Organization/Issuer *</label>
-      <input type="text" id="organization" name="organization" class="form-control" value="{{ old('organization') }}" required placeholder="e.g., ABC University, AWS, Google">
+      <input type="text" id="organization" name="organization" class="form-control" value="{{ old('organization', $achievement->organization) }}" required placeholder="e.g., ABC University, AWS, Google">
     </div>
 
     <div class="form-group">
       <label for="certification">Certification ID/Number</label>
-      <input type="text" id="certification" name="certification" class="form-control" value="{{ old('certification') }}" placeholder="Certificate number or ID (if applicable)">
+      <input type="text" id="certification" name="certification" class="form-control" value="{{ old('certification', $achievement->certification) }}" placeholder="Certificate number or ID (if applicable)">
     </div>
 
     <div class="form-group">
       <label for="date">Date Received *</label>
-      <input type="date" id="date" name="date" class="form-control" value="{{ old('date') }}" required>
+      <input type="date" id="date" name="date" class="form-control" value="{{ old('date', $achievement->date) }}" required>
     </div>
 
     <div class="form-group">
       <label for="category">Category *</label>
       <select id="category" name="category" class="form-control" required>
         <option value="">Select Category</option>
-        <option value="academic" {{ old('category') == 'academic' ? 'selected' : '' }}>Academic</option>
-        <option value="professional" {{ old('category') == 'professional' ? 'selected' : '' }}>Professional</option>
-        <option value="other" {{ old('category') == 'other' ? 'selected' : '' }}>Other</option>
+        <option value="academic" {{ old('category', $achievement->category) == 'academic' ? 'selected' : '' }}>Academic</option>
+        <option value="professional" {{ old('category', $achievement->category) == 'professional' ? 'selected' : '' }}>Professional</option>
+        <option value="other" {{ old('category', $achievement->category) == 'other' ? 'selected' : '' }}>Other</option>
       </select>
     </div>
 
     <div class="form-group">
       <label for="images">Image URLs</label>
-      <input type="text" id="images" name="images" class="form-control" value="{{ old('images') }}" placeholder="Image URLs (comma separated)">
+      <input type="text" id="images" name="images" class="form-control" 
+        value="{{ old('images', is_array($achievement->images) ? implode(', ', $achievement->images) : $achievement->images) }}" 
+        placeholder="Image URLs (comma separated)">
       <small style="color: #666; font-size: 12px;">Separate multiple URLs with commas</small>
     </div>
 
     <div class="form-actions">
       <button type="submit" class="btn btn-success">
-        <i class="fas fa-save"></i> Add Achievement
+        <i class="fas fa-save"></i> Update Achievement
       </button>
       <a href="{{ route('dashboard.achievements') }}" class="btn btn-secondary">
         <i class="fas fa-times"></i> Cancel

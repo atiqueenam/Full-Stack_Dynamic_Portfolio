@@ -20,12 +20,12 @@ class PortfolioController extends Controller
     {
         // Get all portfolio data for the public website
         $user = User::first(); // For single user portfolio
-        $personalDetails = PersonalDetail::first();
+        $personalDetails = PersonalDetail::first(); // Get first user's details for public portfolio
         $projects = Project::where('is_featured', true)->latest()->get();
-        $skills = Skill::orderBy('category')->orderBy('level', 'desc')->get();
-        $experiences = Experience::orderBy('start_date', 'desc')->get();
+        $skills = Skill::orderBy('category')->orderBy('name')->get();
+        $experiences = Experience::orderBy('from_date', 'desc')->get();
         $achievements = Achievement::orderBy('date', 'desc')->get();
-        $education = Education::orderBy('start_date', 'desc')->get();
+        $education = Education::orderBy('passing_year', 'desc')->get();
         $info = Info::first();
         
         return view('welcome', compact(
@@ -43,7 +43,7 @@ class PortfolioController extends Controller
     // Personal Details Management
     public function editPersonalDetails()
     {
-        $personalDetails = PersonalDetail::first();
+        $personalDetails = PersonalDetail::where('user_id', auth()->id())->first();
         return view('dashboard.personal-details', compact('personalDetails'));
     }
     
@@ -66,10 +66,11 @@ class PortfolioController extends Controller
             'profile_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048'
         ]);
         
-        $personalDetails = PersonalDetail::first();
+        $personalDetails = PersonalDetail::where('user_id', auth()->id())->first();
         
         if (!$personalDetails) {
             $personalDetails = new PersonalDetail();
+            $personalDetails->user_id = auth()->id();
         }
         
         // Handle profile image upload
@@ -113,10 +114,12 @@ class PortfolioController extends Controller
             'demo_url' => 'nullable|url',
             'reference' => 'nullable|string|max:255',
             'keywords' => 'nullable|string',
-            'images' => 'nullable|string'
+            'images' => 'nullable|string',
+            'is_featured' => 'nullable|boolean'
         ]);
         
         $validated['user_id'] = Auth::id();
+        $validated['is_featured'] = $request->has('is_featured');
         
         // Handle JSON fields
         if ($request->filled('tools')) {
@@ -153,8 +156,11 @@ class PortfolioController extends Controller
             'demo_url' => 'nullable|url',
             'reference' => 'nullable|string|max:255',
             'keywords' => 'nullable|string',
-            'images' => 'nullable|string'
+            'images' => 'nullable|string',
+            'is_featured' => 'nullable|boolean'
         ]);
+        
+        $validated['is_featured'] = $request->has('is_featured');
         
         // Handle JSON fields
         if ($request->filled('tools')) {
@@ -201,8 +207,9 @@ class PortfolioController extends Controller
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'category' => 'required|string|max:255',
-            'level' => 'required|integer|min:1|max:100',
-            'description' => 'nullable|string'
+            'type' => 'required|in:technical,soft',
+            'level' => 'required|in:beginner,intermediate,expert',
+            'logo' => 'nullable|string|max:255'
         ]);
         
         $validated['user_id'] = Auth::id();
@@ -222,8 +229,9 @@ class PortfolioController extends Controller
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'category' => 'required|string|max:255',
-            'level' => 'required|integer|min:1|max:100',
-            'description' => 'nullable|string'
+            'type' => 'required|in:technical,soft',
+            'level' => 'required|in:beginner,intermediate,expert',
+            'logo' => 'nullable|string|max:255'
         ]);
         
         $skill->update($validated);
@@ -253,13 +261,11 @@ class PortfolioController extends Controller
     public function storeExperience(Request $request)
     {
         $validated = $request->validate([
-            'company' => 'required|string|max:255',
-            'position' => 'required|string|max:255',
-            'description' => 'required|string',
-            'start_date' => 'required|date',
-            'end_date' => 'nullable|date|after:start_date',
-            'is_current' => 'boolean',
-            'location' => 'nullable|string|max:255'
+            'type' => 'required|in:job,internship,freelance,volunteer',
+            'designation' => 'required|string|max:255',
+            'organization' => 'required|string|max:255',
+            'from_date' => 'required|date',
+            'to_date' => 'nullable|date|after:from_date'
         ]);
         
         $validated['user_id'] = Auth::id();
@@ -277,13 +283,11 @@ class PortfolioController extends Controller
     public function updateExperience(Request $request, Experience $experience)
     {
         $validated = $request->validate([
-            'company' => 'required|string|max:255',
-            'position' => 'required|string|max:255',
-            'description' => 'required|string',
-            'start_date' => 'required|date',
-            'end_date' => 'nullable|date|after:start_date',
-            'is_current' => 'boolean',
-            'location' => 'nullable|string|max:255'
+            'type' => 'required|in:job,internship,freelance,volunteer',
+            'designation' => 'required|string|max:255',
+            'organization' => 'required|string|max:255',
+            'from_date' => 'required|date',
+            'to_date' => 'nullable|date|after:from_date'
         ]);
         
         $experience->update($validated);
@@ -313,14 +317,12 @@ class PortfolioController extends Controller
     public function storeEducation(Request $request)
     {
         $validated = $request->validate([
-            'institution' => 'required|string|max:255',
-            'degree' => 'required|string|max:255',
-            'field_of_study' => 'nullable|string|max:255',
-            'description' => 'nullable|string',
-            'start_date' => 'required|date',
-            'end_date' => 'nullable|date|after:start_date',
-            'gpa' => 'nullable|numeric|min:0|max:4',
-            'location' => 'nullable|string|max:255'
+            'type' => 'required|string|max:255',
+            'name' => 'required|string|max:255', 
+            'institute' => 'required|string|max:255',
+            'enrolled_year' => 'required|integer|min:1900|max:2030',
+            'passing_year' => 'required|integer|min:1900|max:2030|gte:enrolled_year',
+            'grade' => 'required|string|max:255'
         ]);
         
         $validated['user_id'] = Auth::id();
@@ -338,14 +340,12 @@ class PortfolioController extends Controller
     public function updateEducation(Request $request, Education $education)
     {
         $validated = $request->validate([
-            'institution' => 'required|string|max:255',
-            'degree' => 'required|string|max:255',
-            'field_of_study' => 'nullable|string|max:255',
-            'description' => 'nullable|string',
-            'start_date' => 'required|date',
-            'end_date' => 'nullable|date|after:start_date',
-            'gpa' => 'nullable|numeric|min:0|max:4',
-            'location' => 'nullable|string|max:255'
+            'type' => 'required|string|max:255',
+            'name' => 'required|string|max:255',
+            'institute' => 'required|string|max:255', 
+            'enrolled_year' => 'required|integer|min:1900|max:2030',
+            'passing_year' => 'required|integer|min:1900|max:2030|gte:enrolled_year',
+            'grade' => 'required|string|max:255'
         ]);
         
         $education->update($validated);
@@ -375,14 +375,23 @@ class PortfolioController extends Controller
     public function storeAchievement(Request $request)
     {
         $validated = $request->validate([
-            'title' => 'required|string|max:255',
-            'description' => 'required|string',
-            'issuer' => 'nullable|string|max:255',
+            'name' => 'required|string|max:255',
+            'type' => 'required|in:award,certification,recognition',
+            'certification' => 'nullable|string|max:255',
+            'organization' => 'required|string|max:255',
             'date' => 'required|date',
-            'url' => 'nullable|url'
+            'category' => 'required|in:academic,professional,other',
+            'images' => 'nullable|string'
         ]);
         
         $validated['user_id'] = Auth::id();
+        
+        // Handle images JSON field
+        if ($request->filled('images')) {
+            $validated['images'] = json_encode(explode(',', $request->images));
+        } else {
+            $validated['images'] = json_encode([]);
+        }
         
         Achievement::create($validated);
         
@@ -397,12 +406,19 @@ class PortfolioController extends Controller
     public function updateAchievement(Request $request, Achievement $achievement)
     {
         $validated = $request->validate([
-            'title' => 'required|string|max:255',
-            'description' => 'required|string',
-            'issuer' => 'nullable|string|max:255',
+            'name' => 'required|string|max:255',
+            'type' => 'required|in:award,certification,recognition',
+            'certification' => 'nullable|string|max:255',
+            'organization' => 'required|string|max:255',
             'date' => 'required|date',
-            'url' => 'nullable|url'
+            'category' => 'required|in:academic,professional,other',
+            'images' => 'nullable|string'
         ]);
+        
+        // Handle images JSON field
+        if ($request->filled('images')) {
+            $validated['images'] = json_encode(explode(',', $request->images));
+        }
         
         $achievement->update($validated);
         
@@ -414,5 +430,50 @@ class PortfolioController extends Controller
         $achievement->delete();
         
         return redirect()->route('dashboard.achievements')->with('success', 'Achievement deleted successfully!');
+    }
+    
+    // Website Info Management
+    public function info()
+    {
+        $info = Info::where('user_id', auth()->id())->first();
+        return view('dashboard.info', compact('info'));
+    }
+    
+    public function updateInfo(Request $request)
+    {
+        $validated = $request->validate([
+            'portfolio' => 'nullable|string|max:255',
+            'address' => 'nullable|string|max:500',
+            'description' => 'nullable|string',
+            'designation' => 'nullable|string|max:255',
+            'scienthush_description' => 'nullable|string',
+            'scienthush_facebook_url' => 'nullable|url|max:255',
+            'scienthush_youtube_url' => 'nullable|url|max:255',
+            'scienthush_featured_videos' => 'nullable|string',
+            'show_scienthush_section' => 'nullable|boolean'
+        ]);
+        
+        $info = Info::where('user_id', auth()->id())->first();
+        
+        if (!$info) {
+            $info = new Info();
+            $info->user_id = auth()->id();
+        }
+        
+        // Handle featured videos (convert text area to JSON array)
+        if ($request->filled('scienthush_featured_videos')) {
+            $videos = array_filter(array_map('trim', explode("\n", $request->scienthush_featured_videos)));
+            $validated['scienthush_featured_videos'] = $videos;
+        } else {
+            $validated['scienthush_featured_videos'] = [];
+        }
+        
+        // Handle checkbox
+        $validated['show_scienthush_section'] = $request->has('show_scienthush_section');
+        
+        $info->fill($validated);
+        $info->save();
+        
+        return redirect()->route('dashboard.info')->with('success', 'Website information updated successfully!');
     }
 }

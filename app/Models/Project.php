@@ -9,32 +9,24 @@ class Project extends Model
 {
     protected $fillable = [
         'user_id',
-        'title',
         'name',
         'description',
-        'technologies',
-        'project_url',
         'github_url',
         'demo_url',
-        'image',
         'images',
         'type',
         'reference',
         'tools',
         'keywords',
         'status',
-        'is_featured',
-        'start_date',
-        'end_date'
+        'is_featured'
     ];
 
     protected $casts = [
         'images' => 'array',
         'tools' => 'array',
         'keywords' => 'array',
-        'is_featured' => 'boolean',
-        'start_date' => 'date',
-        'end_date' => 'date'
+        'is_featured' => 'boolean'
     ];
 
     public function user(): BelongsTo

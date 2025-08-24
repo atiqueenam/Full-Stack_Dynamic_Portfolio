@@ -197,6 +197,14 @@ textarea.form-control {
       <input type="text" id="images" name="images" class="form-control" value="{{ old('images') }}" placeholder="Image URLs (comma separated)">
     </div>
 
+    <div class="form-group">
+      <label>
+        <input type="checkbox" name="is_featured" value="1" {{ old('is_featured') ? 'checked' : '' }}>
+        <span style="margin-left: 8px;">Featured Project</span>
+      </label>
+      <small class="text-muted">Check this box to feature this project on the homepage</small>
+    </div>
+
     <div class="form-actions">
       <button type="submit" class="btn btn-success">
         <i class="fas fa-save"></i> Create Project

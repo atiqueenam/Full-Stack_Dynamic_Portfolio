@@ -90,4 +90,8 @@ Route::middleware('auth')->prefix('dashboard')->name('dashboard.')->group(functi
     Route::get('/achievements/{achievement}/edit', [PortfolioController::class, 'editAchievement'])->name('achievements.edit');
     Route::put('/achievements/{achievement}', [PortfolioController::class, 'updateAchievement'])->name('achievements.update');
     Route::delete('/achievements/{achievement}', [PortfolioController::class, 'destroyAchievement'])->name('achievements.destroy');
+    
+    // Website Info Management
+    Route::get('/info', [PortfolioController::class, 'info'])->name('info');
+    Route::put('/info', [PortfolioController::class, 'updateInfo'])->name('info.update');
 });

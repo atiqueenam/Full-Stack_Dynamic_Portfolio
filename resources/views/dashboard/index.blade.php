@@ -498,6 +498,12 @@
                 </a>
             </div>
             <div class="nav-item">
+                <a href="{{ route('dashboard.info') }}" class="nav-link">
+                    <i class="fas fa-info-circle"></i>
+                    Website Info
+                </a>
+            </div>
+            <div class="nav-item">
                 <a href="{{ route('dashboard.analytics') }}" class="nav-link">
                     <i class="fas fa-chart-line"></i>
                     Analytics

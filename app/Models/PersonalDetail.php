@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class PersonalDetail extends Model
 {
     protected $fillable = [
+        'user_id',
         'full_name',
         'title',
         'bio',
@@ -20,6 +21,22 @@ class PersonalDetail extends Model
         'facebook',
         'instagram',
         'youtube',
-        'profile_image'
+        'profile_image',
+        'description',
+        'blood_group',
+        'department',
+        'age',
+        'dob',
+        'address',
+        'gender'
     ];
+
+    protected $casts = [
+        'dob' => 'date'
+    ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

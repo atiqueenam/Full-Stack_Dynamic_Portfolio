@@ -118,11 +118,11 @@
 </style>
 
 <div class="simple-dashboard">
-  <a href="{{ route('dashboard.experiences') }}" class="back-btn">← Back to Experiences</a>
+  <a href="{{ route('dashboard.education') }}" class="back-btn">← Back to Education</a>
   
   <div class="dashboard-header">
-    <h1>Edit Experience</h1>
-    <p>Update your work experience and professional background</p>
+    <h1>Add New Education</h1>
+    <p>Add your educational qualifications and achievements</p>
   </div>
 
   @if ($errors->any())
@@ -136,47 +136,55 @@
     </div>
   @endif
 
-  <form method="POST" action="{{ route('dashboard.experiences.update', $experience) }}">
+  <form method="POST" action="{{ route('dashboard.education.store') }}">
     @csrf
-    @method('PUT')
     
     <div class="form-group">
-      <label for="type">Experience Type *</label>
+      <label for="type">Education Type *</label>
       <select id="type" name="type" class="form-control" required>
         <option value="">Select Type</option>
-        <option value="job" {{ old('type', $experience->type) == 'job' ? 'selected' : '' }}>Full-time Job</option>
-        <option value="internship" {{ old('type', $experience->type) == 'internship' ? 'selected' : '' }}>Internship</option>
-        <option value="freelance" {{ old('type', $experience->type) == 'freelance' ? 'selected' : '' }}>Freelance</option>
-        <option value="volunteer" {{ old('type', $experience->type) == 'volunteer' ? 'selected' : '' }}>Volunteer</option>
+        <option value="SSC" {{ old('type') == 'SSC' ? 'selected' : '' }}>SSC</option>
+        <option value="HSC" {{ old('type') == 'HSC' ? 'selected' : '' }}>HSC</option>
+        <option value="Diploma" {{ old('type') == 'Diploma' ? 'selected' : '' }}>Diploma</option>
+        <option value="BSc" {{ old('type') == 'BSc' ? 'selected' : '' }}>BSc</option>
+        <option value="BA" {{ old('type') == 'BA' ? 'selected' : '' }}>BA</option>
+        <option value="MSc" {{ old('type') == 'MSc' ? 'selected' : '' }}>MSc</option>
+        <option value="MA" {{ old('type') == 'MA' ? 'selected' : '' }}>MA</option>
+        <option value="PhD" {{ old('type') == 'PhD' ? 'selected' : '' }}>PhD</option>
+        <option value="Other" {{ old('type') == 'Other' ? 'selected' : '' }}>Other</option>
       </select>
     </div>
 
     <div class="form-group">
-      <label for="designation">Job Title/Designation *</label>
-      <input type="text" id="designation" name="designation" class="form-control" value="{{ old('designation', $experience->designation) }}" required placeholder="e.g., Software Developer, Marketing Manager">
+      <label for="name">Degree/Course Name *</label>
+      <input type="text" id="name" name="name" class="form-control" value="{{ old('name') }}" required placeholder="e.g., Computer Science, Business Administration">
     </div>
 
     <div class="form-group">
-      <label for="organization">Company/Organization *</label>
-      <input type="text" id="organization" name="organization" class="form-control" value="{{ old('organization', $experience->organization) }}" required placeholder="e.g., ABC Company, XYZ Organization">
+      <label for="institute">Institute/University *</label>
+      <input type="text" id="institute" name="institute" class="form-control" value="{{ old('institute') }}" required placeholder="e.g., ABC University, XYZ College">
     </div>
 
     <div class="form-group">
-      <label for="from_date">Start Date *</label>
-      <input type="date" id="from_date" name="from_date" class="form-control" value="{{ old('from_date', $experience->from_date ? $experience->from_date->format('Y-m-d') : '') }}" required>
+      <label for="enrolled_year">Enrolled Year *</label>
+      <input type="number" id="enrolled_year" name="enrolled_year" class="form-control" value="{{ old('enrolled_year') }}" required min="1900" max="2030" placeholder="e.g., 2020">
     </div>
 
     <div class="form-group">
-      <label for="to_date">End Date</label>
-      <input type="date" id="to_date" name="to_date" class="form-control" value="{{ old('to_date', $experience->to_date ? $experience->to_date->format('Y-m-d') : '') }}" placeholder="Leave blank if currently working">
-      <small style="color: #666; font-size: 12px;">Leave blank if you're currently working here</small>
+      <label for="passing_year">Passing Year *</label>
+      <input type="number" id="passing_year" name="passing_year" class="form-control" value="{{ old('passing_year') }}" required min="1900" max="2030" placeholder="e.g., 2024">
+    </div>
+
+    <div class="form-group">
+      <label for="grade">Grade/Result *</label>
+      <input type="text" id="grade" name="grade" class="form-control" value="{{ old('grade') }}" required placeholder="e.g., A+, 3.75/4.00, First Class">
     </div>
 
     <div class="form-actions">
       <button type="submit" class="btn btn-success">
-        <i class="fas fa-save"></i> Update Experience
+        <i class="fas fa-save"></i> Add Education
       </button>
-      <a href="{{ route('dashboard.experiences') }}" class="btn btn-secondary">
+      <a href="{{ route('dashboard.education') }}" class="btn btn-secondary">
         <i class="fas fa-times"></i> Cancel
       </a>
     </div>

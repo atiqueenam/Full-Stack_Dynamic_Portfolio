@@ -11,6 +11,8 @@
   --bg-dark: #0a0a0a;
   --bg-card: rgba(255, 255, 255, 0.05);
   --text-light: #ffffff;
+  --text-dark: #1a1a2e;
+  --text-glass: #2c2c54;
   --text-muted: #b0b0b0;
 }
 
@@ -210,6 +212,37 @@
   font-size: 1.05rem;
 }
 
+/* Achievements Section - Fix text visibility */
+#milestones .about-section-card {
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(0, 245, 255, 0.3);
+}
+
+#milestones .about-section-card h3 {
+  color: var(--primary-color) !important;
+  margin-bottom: 15px;
+}
+
+#milestones .about-section-card ul {
+  color: var(--text-light) !important;
+  list-style: none;
+  padding-left: 20px;
+}
+
+#milestones .about-section-card li {
+  color: var(--text-light) !important;
+  margin-bottom: 8px;
+  line-height: 1.6;
+  position: relative;
+}
+
+#milestones .about-section-card li::before {
+  content: '•';
+  color: var(--primary-color);
+  position: absolute;
+  left: -15px;
+}
+
 .focus-areas {
   background: var(--bg-card);
   border: 1px solid rgba(0, 245, 255, 0.3);
@@ -234,6 +267,654 @@
   margin-bottom: 10px;
   padding-left: 20px;
   position: relative;
+}
+
+.focus-areas li::before {
+  content: '•';
+  color: var(--primary-color);
+  position: absolute;
+  left: -5px;
+}
+
+/* Modern Professional Design Styles */
+.modern-section {
+  background: linear-gradient(135deg, rgba(10, 10, 40, 0.3) 0%, rgba(0, 0, 0, 0.2) 100%);
+  position: relative;
+}
+
+.professional-section {
+  background: linear-gradient(135deg, rgba(0, 20, 40, 0.4) 0%, rgba(10, 10, 40, 0.3) 100%);
+}
+
+.achievements-section {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.3) 0%, rgba(20, 0, 40, 0.3) 100%);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-header .section-title {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.title-underline {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  margin: 0 auto 15px;
+  border-radius: 2px;
+}
+
+.section-subtitle {
+  color: var(--text-muted);
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 245, 255, 0.2);
+  border-radius: 20px;
+  padding: 30px;
+  transition: all 0.3s ease;
+  color: var(--text-dark);
+}
+
+.glass-card h3,
+.glass-card h4,
+.glass-card p,
+.glass-card span {
+  color: var(--text-dark);
+}
+
+.glass-card .card-header h3 {
+  color: var(--text-dark);
+  margin: 0;
+}
+
+.glass-card .intro-text {
+  color: var(--text-dark);
+}
+
+.glass-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary-color);
+  box-shadow: 0 20px 40px rgba(0, 245, 255, 0.1);
+}
+
+/* About Me Styles */
+.about-content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-intro {
+  margin-bottom: 50px;
+}
+
+.intro-card {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.profile-highlight {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  text-align: left;
+}
+
+.highlight-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: white;
+  flex-shrink: 0;
+}
+
+.highlight-content h3 {
+  color: var(--primary-color);
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.role-badge {
+  background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+  color: white;
+  padding: 8px 20px;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.intro-text {
+  color: var(--text-light);
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.about-main-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.content-column {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.timeline-card .card-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.timeline-card .card-header i {
+  color: var(--primary-color);
+  font-size: 1.8rem;
+}
+
+.timeline-card .card-header h3 {
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.card-content {
+  color: var(--text-light);
+  line-height: 1.7;
+}
+
+.achievement-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.tag {
+  background: rgba(0, 245, 255, 0.2);
+  color: var(--primary-color);
+  padding: 6px 15px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  border: 1px solid var(--primary-color);
+}
+
+.vision-stats {
+  display: flex;
+  gap: 30px;
+  margin-top: 25px;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.brand-showcase {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.brand-item {
+  background: rgba(123, 104, 238, 0.2);
+  color: var(--accent-color);
+  padding: 6px 12px;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.impact-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.metric {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 10px 15px;
+  border-radius: 25px;
+  color: var(--text-dark);
+}
+
+.metric i {
+  color: var(--primary-color);
+}
+
+.philosophy-section {
+  margin-top: 40px;
+}
+
+.philosophy-card {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.philosophy-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+/* Professional Background Styles */
+.professional-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.professional-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.professional-card.featured {
+  background: linear-gradient(135deg, rgba(0, 245, 255, 0.1) 0%, rgba(123, 104, 238, 0.1) 100%);
+  border: 2px solid var(--primary-color);
+}
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+}
+
+.professional-card .card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.header-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.header-text h3 {
+  color: var(--primary-color);
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.card-badge, .location-badge, .growth-badge, .stack-badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.card-badge {
+  background: var(--primary-color);
+  color: var(--bg-dark);
+}
+
+.location-badge {
+  background: rgba(123, 104, 238, 0.8);
+  color: white;
+}
+
+.growth-badge {
+  background: rgba(40, 167, 69, 0.8);
+  color: white;
+}
+
+.stack-badge {
+  background: rgba(255, 193, 7, 0.8);
+  color: var(--bg-dark);
+}
+
+.skill-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 245, 255, 0.1);
+  padding: 8px 15px;
+  border-radius: 20px;
+  color: var(--primary-color);
+  font-size: 0.9rem;
+}
+
+.experience-timeline {
+  margin-top: 20px;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.timeline-marker {
+  width: 8px;
+  height: 8px;
+  background: var(--primary-color);
+  border-radius: 50%;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.metric-item {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 15px 10px;
+  border-radius: 15px;
+  color: var(--text-dark);
+}
+
+.metric-value {
+  display: block;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.metric-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.tech-categories {
+  margin-top: 20px;
+}
+
+.tech-category {
+  margin-bottom: 15px;
+}
+
+.tech-category h4 {
+  color: var(--primary-color);
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tech-tags span {
+  background: rgba(123, 104, 238, 0.2);
+  color: var(--accent-color);
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+}
+
+.competencies-section {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 40px;
+  border: 1px solid rgba(0, 245, 255, 0.2);
+}
+
+.competencies-title {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+}
+
+.competencies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.competency-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 15px 20px;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  color: var(--text-dark);
+}
+
+.competency-item:hover {
+  transform: translateY(-2px);
+  background: rgba(0, 245, 255, 0.1);
+  color: var(--primary-color);
+}
+
+.competency-item i {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+}
+
+/* Achievements Section Styles */
+.achievements-showcase {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.achievement-category {
+  position: relative;
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.category-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: white;
+  margin-right: 20px;
+}
+
+.category-header h3 {
+  color: var(--primary-color);
+  font-size: 1.6rem;
+  margin: 0;
+}
+
+.category-line {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary-color), transparent);
+  margin-left: 20px;
+}
+
+.achievements-list {
+  position: relative;
+  padding-left: 20px;
+}
+
+.achievements-list::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--primary-color), var(--accent-color));
+}
+
+.achievement-item {
+  position: relative;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.achievement-marker {
+  width: 12px;
+  height: 12px;
+  background: var(--primary-color);
+  border-radius: 50%;
+  margin-left: -26px;
+  margin-top: 8px;
+  border: 3px solid var(--bg-dark);
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+.achievement-content {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 245, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.achievement-content:hover {
+  border-color: var(--primary-color);
+  transform: translateX(5px);
+  box-shadow: 0 10px 30px rgba(0, 245, 255, 0.1);
+}
+
+.achievement-content h4 {
+  color: var(--primary-color);
+  margin: 0 0 10px;
+  font-size: 1.2rem;
+}
+
+.achievement-content p {
+  color: var(--text-dark);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.achievement-period {
+  background: var(--primary-color);
+  color: var(--bg-dark);
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.featured-achievement .achievement-content {
+  background: linear-gradient(135deg, rgba(0, 245, 255, 0.1) 0%, rgba(123, 104, 238, 0.1) 100%);
+  border: 2px solid var(--primary-color);
+}
+
+.achievement-stats {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.achievement-stats .stat {
+  background: rgba(0, 245, 255, 0.2);
+  color: var(--primary-color);
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-main-grid, .philosophy-content, .professional-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .profile-highlight {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .vision-stats {
+    justify-content: center;
+  }
+  
+  .achievements-showcase {
+    grid-template-columns: 1fr;
+  }
+  
+  .competencies-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .focus-areas li::before {
@@ -305,6 +986,370 @@
 
 @keyframes skillLoad {
   0% { width: 0%; }
+}
+
+/* Featured Videos Section */
+.featured-videos-section {
+  padding: 100px 0;
+  background: linear-gradient(135deg, rgba(0, 245, 255, 0.05) 0%, rgba(123, 104, 238, 0.05) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.videos-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.videos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.video-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 245, 255, 0.2);
+  color: var(--text-dark);
+}
+
+.video-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px rgba(0, 245, 255, 0.2);
+  border-color: var(--primary-color);
+}
+
+.video-thumbnail {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+
+.video-thumbnail iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.video-content {
+  padding: 25px;
+}
+
+.video-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+
+.video-description {
+  color: var(--text-dark);
+  opacity: 0.8;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.video-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 15px;
+  border-top: 1px solid rgba(0, 245, 255, 0.1);
+}
+
+.video-platform {
+  background: #FF0000;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.video-date {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.featured-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+  color: white;
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+/* ScienThush Content Section */
+.scienthush-section {
+  padding: 100px 0;
+  background: linear-gradient(135deg, rgba(123, 104, 238, 0.08) 0%, rgba(0, 245, 255, 0.08) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.scienthush-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.platform-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 40px 0;
+}
+
+.platform-tab {
+  background: rgba(255, 255, 255, 0.95);
+  border: 2px solid transparent;
+  padding: 15px 30px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.platform-tab.active {
+  border-color: var(--primary-color);
+  background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+  color: white;
+}
+
+.platform-tab:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 245, 255, 0.2);
+}
+
+.platform-tab i {
+  font-size: 1.2rem;
+}
+
+.platform-tab .facebook-icon {
+  color: #1877f2;
+}
+
+.platform-tab .youtube-icon {
+  color: #ff0000;
+}
+
+.platform-tab.active .facebook-icon,
+.platform-tab.active .youtube-icon {
+  color: white;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.content-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 245, 255, 0.2);
+  color: var(--text-dark);
+  position: relative;
+}
+
+.content-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(0, 245, 255, 0.2);
+  border-color: var(--primary-color);
+}
+
+.content-thumbnail {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  background: #f8f9fa;
+}
+
+.content-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.content-thumbnail iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  transition: transform 0.3s ease;
+}
+
+.content-card:hover .content-thumbnail img,
+.content-card:hover .content-thumbnail iframe {
+  transform: scale(1.02);
+}
+
+.viral-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: linear-gradient(45deg, #ff6b35, #f7931e);
+  color: white;
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+.trending-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: linear-gradient(45deg, #ff0080, #ff6b35);
+  color: white;
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+.platform-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  z-index: 2;
+}
+
+.facebook-badge {
+  background: #1877f2;
+  color: white;
+}
+
+.youtube-badge {
+  background: #ff0000;
+  color: white;
+}
+
+.content-info {
+  padding: 25px;
+}
+
+.content-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.content-description {
+  color: var(--text-dark);
+  opacity: 0.8;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.content-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+  color: white;
+  padding: 12px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.content-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 245, 255, 0.3);
+  text-decoration: none;
+  color: white;
+}
+
+.platform-header {
+  text-align: center;
+  margin: 40px 0;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  border: 1px solid rgba(0, 245, 255, 0.2);
+}
+
+.platform-logo {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.platform-info h3 {
+  color: var(--text-dark);
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.platform-info p {
+  color: var(--text-dark);
+  opacity: 0.8;
+  font-size: 1.1rem;
+}
+
+.follow-stats {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.follow-stat {
+  text-align: center;
+}
+
+.follow-stat .number {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.follow-stat .label {
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  opacity: 0.7;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 /* Projects Section */
@@ -763,227 +1808,550 @@
     </div>
 </section>
 
-<!-- About Section -->
-<section id="about" class="about-section">
+<!-- About Me Section - Redesigned -->
+<section id="about" class="about-section modern-section">
     <div class="about-container">
-        <h2 class="section-title">About Me</h2>
+        <div class="section-header">
+            <h2 class="section-title">About Me</h2>
+            <div class="title-underline"></div>
+            <p class="section-subtitle">Bridging Technology and Creativity</p>
+        </div>
         
-        <div class="about-grid">
-            <div>
-                <div class="about-text">
-                    <div class="about-section-card">
-                        <h3><i class="fas fa-user-graduate"></i> Academic Journey</h3>
-                        <p>
-                            I'm Md Atique Enam, also known as ScienThush — a Computer Science & Engineering student at 
-                            Daffodil International University, with a strong focus on Artificial Intelligence, Machine Learning, 
-                            and Educational Data Science, alongside an active role as a social media content creator.
-                        </p>
-                    </div>
-                    
-                    <div class="about-section-card">
-                        <h3><i class="fas fa-microscope"></i> Research Excellence</h3>
-                        <p>
-                            My academic work involves contributing to ongoing research in areas like explainable AI, 
-                            educational data mining, and precision medicine — applying machine learning techniques to make 
-                            data-driven insights more transparent and actionable. I've been recognized for my academic 
-                            performance through multiple scholarships and was selected for international academic exchange programs 
-                            in Japan and India.
-                        </p>
-                    </div>
-                    
-                    <div class="about-section-card">
-                        <h3><i class="fas fa-video"></i> Content Creation Journey</h3>
-                        <p>
-                            Outside the classroom, I've built a digital identity as a Facebook-based content creator. 
-                            Since 2019, I've created engaging and socially impactful content under the name ScienThush, 
-                            reaching wide audiences with 470K+ followers and collaborating with major brands such as Nagad, 
-                            Bkash, Realme, Oppo, and Suzuki. My content blends storytelling, comedy, and social awareness — 
-                            often portraying relatable characters and addressing real-world issues.
-                        </p>
-                    </div>
-                    
-                    <div class="about-section-card">
-                        <h3><i class="fas fa-lightbulb"></i> Creative Vision</h3>
-                        <p>
-                            My content style focuses on storytelling, comedy, and social awareness — portraying relatable 
-                            characters like myself and my on-screen "father." With a blend of technical skills and creative 
-                            communication, I aim to bridge academic insight with public impact — whether through research 
-                            or relatable content that resonates with diverse audiences.
-                        </p>
-                    </div>
-                    
-                    <div class="about-section-card">
-                        <h3><i class="fas fa-globe"></i> Global Recognition & Impact</h3>
-                        <p>
-                            With over 470,000+ followers across social media platforms, my content has reached millions of viewers 
-                            worldwide. I've been featured in various media outlets and have collaborated with leading brands including 
-                            Nagad, Bkash, Realme, Oppo, and Suzuki. My work demonstrates the power of combining technical expertise 
-                            with creative storytelling to create meaningful impact in both academic and social media spheres.
-                        </p>
-                    </div>
-                    
-                    <div class="about-section-card">
-                        <h3><i class="fas fa-award"></i> Awards & Recognition</h3>
-                        <p>
-                            Throughout my academic journey, I have been honored with multiple scholarships and academic excellence awards 
-                            from Daffodil International University. I was selected for prestigious international academic exchange programs 
-                            in Japan and India, representing my institution and country. These recognitions reflect my dedication to both 
-                            academic excellence and innovative thinking in the field of Computer Science and AI.
-                        </p>
-                    </div>
-                    
-                    <div class="about-section-card">
-                        <h3><i class="fas fa-handshake"></i> Professional Philosophy</h3>
-                        <p>
-                            I believe in the convergence of technology and humanity. My approach combines rigorous technical research 
-                            with accessible communication, making complex AI concepts understandable to broader audiences. Whether 
-                            developing explainable AI systems or creating viral content, I focus on transparency, social impact, 
-                            and ethical responsibility in all my endeavors.
-                        </p>
-                    </div>
-                    
-                    <div class="about-section-card">
-                        <h3><i class="fas fa-rocket"></i> Future Aspirations</h3>
-                        <p>
-                            My vision extends beyond current achievements. I aim to establish myself as a leading researcher in 
-                            explainable AI while continuing to innovate in digital content creation. I'm working towards contributing 
-                            to breakthrough research in educational data science and precision medicine, while expanding my content 
-                            creation platform to inspire the next generation of tech enthusiasts and content creators globally.
-                        </p>
+        <div class="about-content-wrapper">
+            <!-- Hero Introduction -->
+            <div class="hero-intro">
+                <div class="intro-card glass-card">
+                    <div class="profile-highlight">
+                        <div class="highlight-icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <div class="highlight-content">
+                            <h3>Md Atique Enam</h3>
+                            <p class="role-badge">AI Researcher & Content Creator</p>
+                            <p class="intro-text">
+                                Computer Science & Engineering student at Daffodil International University, specializing in 
+                                Artificial Intelligence, Machine Learning, and Educational Data Science. Also known as 
+                                <strong>ScienThush</strong> in the digital world.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
-            
-            <div class="focus-areas">
-                <h3>Key Focus Areas</h3>
-                <ul>
-                    <li><i class="bi bi-brain"></i> AI & Machine Learning Research</li>
-                    <li><i class="bi bi-mortarboard-fill"></i> Educational Data Mining</li>
-                    <li><i class="bi bi-award-fill"></i> Academic Excellence & Scholarships</li>
-                    <li><i class="bi bi-camera-video-fill"></i> Video Production & Content Creation</li>
-                    <li><i class="bi bi-people-fill"></i> Social Media Strategy & Brand Collaboration</li>
-                    <li><i class="bi bi-mic-fill"></i> Public Speaking & Acting</li>
-                </ul>
+
+            <!-- Main Content Grid -->
+            <div class="about-main-grid">
+                <!-- Left Column - Journey & Research -->
+                <div class="content-column">
+                    <div class="timeline-card glass-card">
+                        <div class="card-header">
+                            <i class="fas fa-microscope"></i>
+                            <h3>Research Excellence</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>
+                                Contributing to cutting-edge research in explainable AI, educational data mining, and 
+                                precision medicine. My work focuses on making machine learning techniques more transparent 
+                                and actionable, with recognition through multiple scholarships and selection for international 
+                                academic exchange programs in Japan and India.
+                            </p>
+                            <div class="achievement-tags">
+                                <span class="tag">Explainable AI</span>
+                                <span class="tag">Educational Data Mining</span>
+                                <span class="tag">Precision Medicine</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-card glass-card">
+                        <div class="card-header">
+                            <i class="fas fa-lightbulb"></i>
+                            <h3>Creative Vision</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>
+                                My creative philosophy centers on storytelling that bridges technical complexity with 
+                                human understanding. Through relatable characters and compelling narratives, I transform 
+                                complex AI concepts into accessible content that resonates with diverse audiences.
+                            </p>
+                            <div class="vision-stats">
+                                <div class="stat-item">
+                                    <span class="stat-number">470K+</span>
+                                    <span class="stat-label">Followers</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">Millions</span>
+                                    <span class="stat-label">Views</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column - Digital Impact & Recognition -->
+                <div class="content-column">
+                    <div class="timeline-card glass-card">
+                        <div class="card-header">
+                            <i class="fas fa-video"></i>
+                            <h3>Digital Innovation</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>
+                                Since 2019, I've built a powerful digital presence as ScienThush, creating socially impactful 
+                                content that blends storytelling, comedy, and social awareness. My collaborations with major 
+                                brands like Nagad, Bkash, Realme, Oppo, and Suzuki demonstrate the commercial value of 
+                                authentic creative content.
+                            </p>
+                            <div class="brand-showcase">
+                                <div class="brand-item">Nagad</div>
+                                <div class="brand-item">Bkash</div>
+                                <div class="brand-item">Realme</div>
+                                <div class="brand-item">Oppo</div>
+                                <div class="brand-item">Suzuki</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-card glass-card">
+                        <div class="card-header">
+                            <i class="fas fa-globe"></i>
+                            <h3>Global Impact</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>
+                                Featured in various media outlets, my work demonstrates the power of combining technical 
+                                expertise with creative storytelling. I've created meaningful impact in both academic 
+                                and social media spheres, inspiring the next generation of tech enthusiasts.
+                            </p>
+                            <div class="impact-metrics">
+                                <div class="metric">
+                                    <i class="fas fa-award"></i>
+                                    <span>Multiple Awards</span>
+                                </div>
+                                <div class="metric">
+                                    <i class="fas fa-plane"></i>
+                                    <span>International Programs</span>
+                                </div>
+                                <div class="metric">
+                                    <i class="fas fa-handshake"></i>
+                                    <span>Brand Partnerships</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Philosophy & Future Section -->
+            <div class="philosophy-section">
+                <div class="philosophy-card glass-card">
+                    <div class="philosophy-content">
+                        <div class="philosophy-left">
+                            <div class="card-header">
+                                <i class="fas fa-handshake"></i>
+                                <h3>Professional Philosophy</h3>
+                            </div>
+                            <p>
+                                I believe in the convergence of technology and humanity. My approach combines rigorous 
+                                technical research with accessible communication, making complex AI concepts understandable 
+                                to broader audiences while maintaining ethical responsibility.
+                            </p>
+                        </div>
+                        <div class="philosophy-right">
+                            <div class="card-header">
+                                <i class="fas fa-rocket"></i>
+                                <h3>Future Vision</h3>
+                            </div>
+                            <p>
+                                Establishing myself as a leading researcher in explainable AI while expanding content 
+                                creation platforms globally. Working towards breakthrough contributions in educational 
+                                data science and precision medicine.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Professional Background Section -->
-<section id="background" class="about-section" style="background: rgba(10, 10, 40, 0.4);">
+<!-- Professional Background Section - Redesigned -->
+<section id="background" class="about-section professional-section">
     <div class="about-container">
-        <h2 class="section-title">Professional Background</h2>
-        
-        <div class="about-grid">
-            <div>
-                <div class="about-text">
-                    <div class="about-section-card">
-                        <h3><i class="fas fa-university"></i> Academic Excellence</h3>
-                        <p>
-                            Currently pursuing Computer Science & Engineering at Daffodil International University with a 
-                            specialized focus on Artificial Intelligence and Machine Learning. Maintaining outstanding academic 
-                            performance with multiple merit-based scholarships and consistently ranking among top students. 
-                            My coursework includes advanced topics in AI, data structures, algorithms, and software engineering.
-                        </p>
+        <div class="section-header">
+            <h2 class="section-title">Professional Background</h2>
+            <div class="title-underline"></div>
+            <p class="section-subtitle">Excellence Through Innovation</p>
+        </div>
+
+        <div class="professional-grid">
+            <!-- Academic Excellence Card -->
+            <div class="professional-card glass-card featured">
+                <div class="card-overlay"></div>
+                <div class="card-header">
+                    <div class="header-icon">
+                        <i class="fas fa-university"></i>
                     </div>
-                    
-                    <div class="about-section-card">
-                        <h3><i class="fas fa-plane"></i> International Exposure</h3>
-                        <p>
-                            Selected for prestigious international academic exchange programs in Japan and India, representing 
-                            my university and country. These experiences provided invaluable exposure to global academic standards, 
-                            cross-cultural collaboration, and advanced research methodologies. The programs enhanced my 
-                            perspective on technology's role in solving global challenges.
-                        </p>
+                    <div class="header-text">
+                        <h3>Academic Excellence</h3>
+                        <span class="card-badge">Current</span>
                     </div>
-                    
-                    <div class="about-section-card">
-                        <h3><i class="fas fa-chart-line"></i> Content Creation Metrics</h3>
-                        <p>
-                            Built a substantial digital presence with 470,000+ followers on Facebook, generating millions of 
-                            views across content pieces. Average engagement rates significantly exceed industry standards, 
-                            with content regularly achieving viral status. Successful brand partnerships have resulted in 
-                            measurable impact for collaborating companies including Nagad, Bkash, and major tech brands.
-                        </p>
-                    </div>
-                    
-                    <div class="about-section-card">
-                        <h3><i class="fas fa-tools"></i> Technical Expertise</h3>
-                        <p>
-                            Proficient in multiple programming languages including Python, Java, and JavaScript. Experienced 
-                            with machine learning frameworks like TensorFlow, PyTorch, and Scikit-learn. Strong background in 
-                            web development using Laravel, Vue.js, and modern frontend technologies. Database management 
-                            experience with MySQL and data analysis using pandas, NumPy, and visualization libraries.
-                        </p>
+                </div>
+                <div class="card-content">
+                    <p>
+                        Pursuing Computer Science & Engineering at Daffodil International University with specialized 
+                        focus on AI and Machine Learning. Maintaining outstanding performance with multiple merit-based 
+                        scholarships and consistent top rankings.
+                    </p>
+                    <div class="skill-highlights">
+                        <div class="skill-item">
+                            <i class="fas fa-brain"></i>
+                            <span>Artificial Intelligence</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Machine Learning</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-code"></i>
+                            <span>Software Engineering</span>
+                        </div>
                     </div>
                 </div>
             </div>
-            
-            <div class="focus-areas">
-                <h3>Core Competencies</h3>
-                <ul>
-                    <li><i class="fas fa-code"></i> Full-Stack Development</li>
-                    <li><i class="fas fa-database"></i> Data Science & Analytics</li>
-                    <li><i class="fas fa-robot"></i> Machine Learning Implementation</li>
-                    <li><i class="fas fa-video"></i> Professional Video Production</li>
-                    <li><i class="fas fa-pen"></i> Content Strategy & Scriptwriting</li>
-                    <li><i class="fas fa-users"></i> Team Leadership & Management</li>
-                    <li><i class="fas fa-presentation"></i> Public Speaking & Workshops</li>
-                    <li><i class="fas fa-handshake"></i> Brand Collaboration & Marketing</li>
-                </ul>
+
+            <!-- International Experience Card -->
+            <div class="professional-card glass-card">
+                <div class="card-header">
+                    <div class="header-icon">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <div class="header-text">
+                        <h3>Global Exposure</h3>
+                        <span class="location-badge">Japan & India</span>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p>
+                        Selected for prestigious international academic exchange programs, representing my university 
+                        and country. Gained invaluable exposure to global academic standards and cross-cultural 
+                        collaboration methodologies.
+                    </p>
+                    <div class="experience-timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <span>Japan Exchange Program</span>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <span>India Academic Program</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Creation Metrics Card -->
+            <div class="professional-card glass-card">
+                <div class="card-header">
+                    <div class="header-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="header-text">
+                        <h3>Digital Impact</h3>
+                        <span class="growth-badge">+470K</span>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p>
+                        Built substantial digital presence with exceptional engagement rates. Successful brand 
+                        partnerships have resulted in measurable impact for major companies across various industries.
+                    </p>
+                    <div class="metrics-grid">
+                        <div class="metric-item">
+                            <span class="metric-value">470K+</span>
+                            <span class="metric-label">Followers</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-value">Millions</span>
+                            <span class="metric-label">Views</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-value">High</span>
+                            <span class="metric-label">Engagement</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-value">Viral</span>
+                            <span class="metric-label">Content</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technical Expertise Card -->
+            <div class="professional-card glass-card">
+                <div class="card-header">
+                    <div class="header-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="header-text">
+                        <h3>Technical Stack</h3>
+                        <span class="stack-badge">Full-Stack</span>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p>
+                        Proficient across multiple technologies and frameworks. Strong foundation in both theoretical 
+                        concepts and practical implementation across web development and machine learning domains.
+                    </p>
+                    <div class="tech-categories">
+                        <div class="tech-category">
+                            <h4>Programming</h4>
+                            <div class="tech-tags">
+                                <span>Python</span>
+                                <span>Java</span>
+                                <span>JavaScript</span>
+                            </div>
+                        </div>
+                        <div class="tech-category">
+                            <h4>ML/AI</h4>
+                            <div class="tech-tags">
+                                <span>TensorFlow</span>
+                                <span>PyTorch</span>
+                                <span>Scikit-learn</span>
+                            </div>
+                        </div>
+                        <div class="tech-category">
+                            <h4>Web Dev</h4>
+                            <div class="tech-tags">
+                                <span>Laravel</span>
+                                <span>Vue.js</span>
+                                <span>MySQL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Core Competencies Section -->
+        <div class="competencies-section">
+            <h3 class="competencies-title">Core Competencies</h3>
+            <div class="competencies-grid">
+                <div class="competency-item">
+                    <i class="fas fa-code"></i>
+                    <span>Full-Stack Development</span>
+                </div>
+                <div class="competency-item">
+                    <i class="fas fa-database"></i>
+                    <span>Data Science & Analytics</span>
+                </div>
+                <div class="competency-item">
+                    <i class="fas fa-robot"></i>
+                    <span>Machine Learning</span>
+                </div>
+                <div class="competency-item">
+                    <i class="fas fa-video"></i>
+                    <span>Video Production</span>
+                </div>
+                <div class="competency-item">
+                    <i class="fas fa-pen"></i>
+                    <span>Content Strategy</span>
+                </div>
+                <div class="competency-item">
+                    <i class="fas fa-users"></i>
+                    <span>Team Leadership</span>
+                </div>
+                <div class="competency-item">
+                    <i class="fas fa-presentation"></i>
+                    <span>Public Speaking</span>
+                </div>
+                <div class="competency-item">
+                    <i class="fas fa-handshake"></i>
+                    <span>Brand Collaboration</span>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Achievements & Milestones Section -->
-<section id="milestones" class="about-section" style="background: rgba(0, 0, 0, 0.2);">
+<!-- Achievements & Milestones Section - Redesigned -->
+<section id="milestones" class="about-section achievements-section">
     <div class="about-container">
-        <h2 class="section-title">Achievements & Milestones</h2>
-        
-        <div class="achievements-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px;">
-            <div class="about-section-card">
-                <h3><i class="fas fa-trophy"></i> Academic Honors</h3>
-                <ul style="color: var(--text-light); padding-left: 20px;">
-                    <li style="color: var(--text-light);">Multiple Merit-based Scholarships (2021-2024)</li>
-                    <li style="color: var(--text-light);">Dean's List Recognition for Academic Excellence</li>
-                    <li style="color: var(--text-light);">International Exchange Program Selection (Japan & India)</li>
-                    <li style="color: var(--text-light);">Outstanding Performance in AI & ML Coursework</li>
-                    <li style="color: var(--text-light);">Research Paper Contributions in Educational Data Science</li>
-                </ul>
+        <div class="section-header">
+            <h2 class="section-title">Achievements & Milestones</h2>
+            <div class="title-underline"></div>
+            <p class="section-subtitle">Celebrating Success & Impact</p>
+        </div>
+
+        <div class="achievements-showcase">
+            <!-- Educational Background -->
+            <div class="achievement-category">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Educational Background</h3>
+                    <div class="category-line"></div>
+                </div>
+                <div class="achievements-list">
+                    <div class="achievement-item">
+                        <div class="achievement-marker"></div>
+                        <div class="achievement-content">
+                            <h4>Bachelor of Science in Computer Science & Engineering</h4>
+                            <p>Currently studying at Daffodil International University</p>
+                            <span class="achievement-period">2021-Present</span>
+                        </div>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-marker"></div>
+                        <div class="achievement-content">
+                            <h4>Higher Secondary Certificate (HSC)</h4>
+                            <p>Gazipur Cantonment College - GPA 5.00</p>
+                            <span class="achievement-period">2020</span>
+                        </div>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-marker"></div>
+                        <div class="achievement-content">
+                            <h4>Secondary School Certificate (SSC)</h4>
+                            <p>Gazipur Cantonment Board High School - GPA 5.00</p>
+                            <span class="achievement-period">2018</span>
+                        </div>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-marker"></div>
+                        <div class="achievement-content">
+                            <h4>International Exchange Programs</h4>
+                            <p>Selected for prestigious academic programs in Japan & India</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            
-            <div class="about-section-card">
-                <h3><i class="fas fa-star"></i> Content Creation Milestones</h3>
-                <ul style="color: var(--text-light); padding-left: 20px;">
-                    <li style="color: var(--text-light);">470,000+ Social Media Followers</li>
-                    <li style="color: var(--text-light);">Millions of Views Across Content Portfolio</li>
-                    <li style="color: var(--text-light);">Successful Brand Partnerships with Major Companies</li>
-                    <li style="color: var(--text-light);">Viral Content Creation with Social Impact</li>
-                    <li style="color: var(--text-light);">Community Building and Audience Engagement Excellence</li>
-                </ul>
+
+            <!-- Content Creation Milestones -->
+            <div class="achievement-category">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Digital Milestones</h3>
+                    <div class="category-line"></div>
+                </div>
+                <div class="achievements-list">
+                    <div class="achievement-item featured-achievement">
+                        <div class="achievement-marker"></div>
+                        <div class="achievement-content">
+                            <h4>470,000+ Social Media Followers</h4>
+                            <p>Built massive engaged community across platforms</p>
+                            <div class="achievement-stats">
+                                <span class="stat">470K+ Followers</span>
+                                <span class="stat">Millions of Views</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-marker"></div>
+                        <div class="achievement-content">
+                            <h4>Major Brand Partnerships</h4>
+                            <p>Successful collaborations with industry leaders</p>
+                        </div>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-marker"></div>
+                        <div class="achievement-content">
+                            <h4>Viral Content Creation</h4>
+                            <p>Multiple viral videos with social impact</p>
+                        </div>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-marker"></div>
+                        <div class="achievement-content">
+                            <h4>Community Building Excellence</h4>
+                            <p>Outstanding audience engagement and growth</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            
-            <div class="about-section-card">
-                <h3><i class="fas fa-briefcase"></i> Professional Development</h3>
-                <ul style="color: var(--text-light); padding-left: 20px;">
-                    <li style="color: var(--text-light);">Leadership Roles in University Projects</li>
-                    <li style="color: var(--text-light);">Cross-cultural Collaboration Experience</li>
-                    <li style="color: var(--text-light);">Technical Workshop Presentations</li>
-                    <li style="color: var(--text-light);">Mentoring Junior Students in Programming</li>
-                    <li style="color: var(--text-light);">Open Source Contributions and Projects</li>
-                </ul>
+
+            <!-- Professional Development -->
+            <div class="achievement-category">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Professional Growth</h3>
+                    <div class="category-line"></div>
+                </div>
+                <div class="achievements-list">
+                    <div class="achievement-item">
+                        <div class="achievement-marker"></div>
+                        <div class="achievement-content">
+                            <h4>Leadership Roles</h4>
+                            <p>Led multiple university projects successfully</p>
+                        </div>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-marker"></div>
+                        <div class="achievement-content">
+                            <h4>Cross-cultural Collaboration</h4>
+                            <p>International project experience</p>
+                        </div>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-marker"></div>
+                        <div class="achievement-content">
+                            <h4>Technical Presentations</h4>
+                            <p>Workshop presentations and knowledge sharing</p>
+                        </div>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-marker"></div>
+                        <div class="achievement-content">
+                            <h4>Open Source Contributions</h4>
+                            <p>Active contributor to community projects</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            
-            <div class="about-section-card">
-                <h3><i class="fas fa-heart"></i> Social Impact</h3>
-                <ul style="color: var(--text-light); padding-left: 20px;">
-                    <li style="color: var(--text-light);">Educational Content for Tech Awareness</li>
-                    <li style="color: var(--text-light);">Social Issues Advocacy through Content</li>
-                    <li style="color: var(--text-light);">Inspiring Youth in STEM Fields</li>
-                    <li style="color: var(--text-light);">Cultural Bridge Building through Content</li>
-                    <li style="color: var(--text-light);">Technology Literacy Promotion</li>
-                </ul>
+
+            <!-- Social Impact -->
+            <div class="achievement-category">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Social Impact</h3>
+                    <div class="category-line"></div>
+                </div>
+                <div class="achievements-list">
+                    <div class="achievement-item">
+                        <div class="achievement-marker"></div>
+                        <div class="achievement-content">
+                            <h4>Educational Content Creation</h4>
+                            <p>Promoting tech awareness through accessible content</p>
+                        </div>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-marker"></div>
+                        <div class="achievement-content">
+                            <h4>Social Issues Advocacy</h4>
+                            <p>Using platform for meaningful social commentary</p>
+                        </div>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-marker"></div>
+                        <div class="achievement-content">
+                            <h4>STEM Inspiration</h4>
+                            <p>Inspiring youth to pursue technology careers</p>
+                        </div>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-marker"></div>
+                        <div class="achievement-content">
+                            <h4>Cultural Bridge Building</h4>
+                            <p>Connecting diverse audiences through content</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -1158,6 +2526,379 @@
     </div>
 </section>
 
+<!-- Featured Videos Section -->
+<section id="featured-videos" class="featured-videos-section modern-section">
+    <div class="videos-container">
+        <div class="section-header">
+            <h2 class="section-title">News Features</h2>
+            <div class="title-underline"></div>
+            <p class="section-subtitle">ScienThush in the Media</p>
+        </div>
+        
+        <div class="videos-grid">
+            <!-- Video 1 -->
+            <div class="video-card">
+                <div class="video-thumbnail">
+                    <div class="featured-badge">Featured</div>
+                    <iframe src="https://www.youtube.com/embed/vplGOweMO-A" 
+                            title="ScienThush Featured Content 1" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-content">
+                    
+                    <p class="video-description">
+  
+                    </p>
+                    <div class="video-meta">
+                        <div class="video-platform">
+                            <i class="fab fa-youtube"></i>
+                            YouTube
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video 2 -->
+            <div class="video-card">
+                <div class="video-thumbnail">
+                    <div class="featured-badge">Featured</div>
+                    <iframe src="https://www.youtube.com/embed/HjDwJ2xhIUs" 
+                            title="ScienThush Featured Content 2" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-content">
+                    <div class="video-meta">
+                        <div class="video-platform">
+                            <i class="fab fa-youtube"></i>
+                            YouTube
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video 3 -->
+            <div class="video-card">
+                <div class="video-thumbnail">
+                    <div class="featured-badge">Featured</div>
+                    <iframe src="https://www.youtube.com/embed/gJYzQKgmRGE" 
+                            title="ScienThush Featured Content 3" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-content">
+                    <div class="video-meta">
+                        <div class="video-platform">
+                            <i class="fab fa-youtube"></i>
+                            YouTube
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ScienThush Content Section -->
+@if($info && $info->show_scienthush_section)
+<section id="scienthush" class="scienthush-section modern-section">
+    <div class="scienthush-container">
+        <div class="section-header">
+            <h2 class="section-title">ScienThush</h2>
+            <div class="title-underline"></div>
+            <p class="section-subtitle">{{ $info->scienthush_description ?: 'Most Viewed Content Across Platforms' }}</p>
+        </div>
+
+        <!-- Platform Header -->
+        <div class="platform-header">
+            <div class="platform-logo">
+                <i class="fas fa-video" style="color: var(--primary-color);"></i>
+            </div>
+            <div class="platform-info">
+                <h3>Digital Creator & Content Strategist</h3>
+                <p>Creating viral content that bridges technology, education, and entertainment</p>
+                <div style="margin-top: 15px;">
+                    @if($info->scienthush_facebook_url)
+                    <a href="{{ $info->scienthush_facebook_url }}" target="_blank" style="color: var(--primary-color); text-decoration: none; margin-right: 20px;">
+                        <i class="fab fa-facebook"></i> facebook.com/scienthush
+                    </a>
+                    @endif
+                    @if($info->scienthush_youtube_url)
+                    <a href="{{ $info->scienthush_youtube_url }}" target="_blank" style="color: var(--primary-color); text-decoration: none;">
+                        <i class="fab fa-youtube"></i> @scienthush
+                    </a>
+                    @endif
+                </div>
+            </div>
+            <div class="follow-stats">
+                <div class="follow-stat">
+                    <span class="number">470K+</span>
+                    <span class="label">Total Followers</span>
+                </div>
+                <div class="follow-stat">
+                    <span class="number">Millions</span>
+                    <span class="label">Total Views</span>
+                </div>
+                <div class="follow-stat">
+                    <span class="number">Viral</span>
+                    <span class="label">Content</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dynamic Video Content -->
+        @if($info->scienthush_featured_videos && count($info->scienthush_featured_videos) > 0)
+        <div class="content-grid">
+            @foreach($info->scienthush_featured_videos as $index => $video)
+            <div class="content-card">
+                <div class="content-thumbnail">
+                    <div class="viral-badge">Featured</div>
+                    @if(strpos($video, 'facebook.com') !== false)
+                    <div class="platform-badge facebook-badge">
+                        <i class="fab fa-facebook"></i>
+                        Facebook
+                    </div>
+                    @php
+                        $embedUrl = '';
+                        if (preg_match('/facebook\.com\/.*\/videos\/(\d+)/', $video, $matches)) {
+                            $embedUrl = 'https://www.facebook.com/plugins/video.php?height=240&href=' . urlencode($video) . '&show_text=false&width=400&t=0';
+                        }
+                    @endphp
+                    @if($embedUrl)
+                    <iframe src="{{ $embedUrl }}" 
+                            width="400" height="240" style="border:none;overflow:hidden" scrolling="no" frameborder="0" 
+                            allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+                    </iframe>
+                    @endif
+                    @elseif(strpos($video, 'youtube.com') !== false || strpos($video, 'youtu.be') !== false)
+                    <div class="platform-badge youtube-badge">
+                        <i class="fab fa-youtube"></i>
+                        YouTube
+                    </div>
+                    @php
+                        $embedUrl = '';
+                        if (preg_match('/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/', $video, $matches)) {
+                            $embedUrl = 'https://www.youtube.com/embed/' . $matches[1];
+                        }
+                    @endphp
+                    @if($embedUrl)
+                    <iframe src="{{ $embedUrl }}" 
+                            title="ScienThush Featured Video {{ $index + 1 }}" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                    @endif
+                    @endif
+                </div>
+                <div class="content-info">
+                    <h3 class="content-title">ScienThush Featured Content {{ $index + 1 }}</h3>
+                    <p class="content-description">
+                        Professional content showcasing ScienThush's creative work across digital platforms.
+                    </p>
+                    <a href="{{ $video }}" target="_blank" class="content-link">
+                        @if(strpos($video, 'facebook.com') !== false)
+                        <i class="fab fa-facebook"></i>
+                        Watch on Facebook
+                        @else
+                        <i class="fab fa-youtube"></i>
+                        Watch on YouTube
+                        @endif
+                    </a>
+                </div>
+            </div>
+            @endforeach
+        </div>
+        @else
+        <!-- Fallback: Platform Navigation and Default Content -->
+        <div class="platform-tabs">
+            <div class="platform-tab active" data-platform="facebook">
+                <i class="fab fa-facebook facebook-icon"></i>
+                <span>Facebook</span>
+            </div>
+            <div class="platform-tab" data-platform="youtube">
+                <i class="fab fa-youtube youtube-icon"></i>
+                <span>YouTube</span>
+            </div>
+
+        <!-- Facebook Content -->
+        <div id="facebook-content" class="content-grid platform-content active">
+            <!-- Default Facebook Videos -->
+            <div class="content-card">
+                <div class="content-thumbnail">
+                    <div class="viral-badge">Viral</div>
+                    <div class="platform-badge facebook-badge">
+                        <i class="fab fa-facebook"></i>
+                        Facebook
+                    </div>
+                    <iframe src="https://www.facebook.com/plugins/video.php?height=240&href=https%3A%2F%2Fwww.facebook.com%2Fscienthush%2Fvideos%2F1946150585816340&show_text=false&width=400&t=0" 
+                            width="400" height="240" style="border:none;overflow:hidden" scrolling="no" frameborder="0" 
+                            allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+                    </iframe>
+                </div>
+                <div class="content-info">
+                    <h3 class="content-title">Viral ScienThush Content</h3>
+                    <p class="content-description">
+                        One of the most popular ScienThush videos featuring comedy, social commentary, and 
+                        relatable storytelling that resonated with millions of viewers across Bangladesh.
+                    </p>
+                    <a href="https://www.facebook.com/scienthush/videos/1946150585816340" target="_blank" class="content-link">
+                        <i class="fab fa-facebook"></i>
+                        Watch on Facebook
+                    </a>
+                </div>
+            </div>
+
+            <!-- Facebook Video 2 -->
+            <div class="content-card">
+                <div class="content-thumbnail">
+                    <div class="trending-badge">Trending</div>
+                    <div class="platform-badge facebook-badge">
+                        <i class="fab fa-facebook"></i>
+                        Facebook
+                    </div>
+                    <iframe src="https://www.facebook.com/plugins/video.php?height=240&href=https%3A%2F%2Fwww.facebook.com%2Fscienthush%2Fvideos%2F2479949425737080&show_text=false&width=400&t=0" 
+                            width="400" height="240" style="border:none;overflow:hidden" scrolling="no" frameborder="0" 
+                            allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+                    </iframe>
+                </div>
+                <div class="content-info">
+                    <h3 class="content-title">Educational Comedy Series</h3>
+                    <p class="content-description">
+                        Engaging educational content that makes technology and academic concepts accessible 
+                        through humor and storytelling. A perfect blend of entertainment and learning.
+                    </p>
+                    <a href="https://www.facebook.com/scienthush/videos/2479949425737080" target="_blank" class="content-link">
+                        <i class="fab fa-facebook"></i>
+                        Watch on Facebook
+                    </a>
+                </div>
+            </div>
+
+            <!-- Facebook Video 3 -->
+            <div class="content-card">
+                <div class="content-thumbnail">
+                    <div class="viral-badge">Viral</div>
+                    <div class="platform-badge facebook-badge">
+                        <i class="fab fa-facebook"></i>
+                        Facebook
+                    </div>
+                    <iframe src="https://www.facebook.com/plugins/video.php?height=240&href=https%3A%2F%2Fwww.facebook.com%2Fscienthush%2Fvideos%2F2190473314723834&show_text=false&width=400&t=0" 
+                            width="400" height="240" style="border:none;overflow:hidden" scrolling="no" frameborder="0" 
+                            allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+                    </iframe>
+                </div>
+                <div class="content-info">
+                    <h3 class="content-title">Social Commentary & Awareness</h3>
+                    <p class="content-description">
+                        Hard-hitting social commentary wrapped in entertainment. ScienThush's signature style 
+                        of addressing real societal issues through relatable characters and compelling narratives.
+                    </p>
+                    <a href="https://www.facebook.com/scienthush/videos/2190473314723834" target="_blank" class="content-link">
+                        <i class="fab fa-facebook"></i>
+                        Watch on Facebook
+                    </a>
+                        Visit Facebook Page
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- YouTube Content (Initially Hidden) -->
+        <div id="youtube-content" class="content-grid platform-content" style="display: none;">
+            <!-- YouTube Video 1 -->
+            <div class="content-card">
+                <div class="content-thumbnail">
+                    <div class="trending-badge">Popular</div>
+                    <div class="platform-badge youtube-badge">
+                        <i class="fab fa-youtube"></i>
+                        YouTube
+                    </div>
+                    <iframe src="https://www.youtube.com/embed/_RupsuOad7A" 
+                            title="ScienThush Popular Video" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="content-info">
+                    <h3 class="content-title">Comedy & Entertainment</h3>
+                    <p class="content-description">
+                        One of ScienThush's most popular YouTube videos featuring signature comedy style, 
+                        relatable characters, and entertaining content that connects with diverse audiences.
+                    </p>
+                    <a href="https://youtu.be/_RupsuOad7A" target="_blank" class="content-link">
+                        <i class="fab fa-youtube"></i>
+                        Watch on YouTube
+                    </a>
+                </div>
+            </div>
+
+            <!-- YouTube Video 2 -->
+            <div class="content-card">
+                <div class="content-thumbnail">
+                    <div class="viral-badge">Viral</div>
+                    <div class="platform-badge youtube-badge">
+                        <i class="fab fa-youtube"></i>
+                        YouTube
+                    </div>
+                    <iframe src="https://www.youtube.com/embed/0ntFIxxC7ZY" 
+                            title="ScienThush Trending Content" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="content-info">
+                    <h3 class="content-title">Trending ScienThush Series</h3>
+                    <p class="content-description">
+                        High-engagement content that showcases ScienThush's ability to create viral material 
+                        that resonates across different demographics and social media platforms.
+                    </p>
+                    <a href="https://youtu.be/0ntFIxxC7ZY" target="_blank" class="content-link">
+                        <i class="fab fa-youtube"></i>
+                        Watch on YouTube
+                    </a>
+                </div>
+            </div>
+
+            <!-- YouTube Video 3 -->
+            <div class="content-card">
+                <div class="content-thumbnail">
+                    <div class="viral-badge">Viral</div>
+                    <div class="platform-badge youtube-badge">
+                        <i class="fab fa-youtube"></i>
+                        YouTube
+                    </div>
+                    <iframe src="https://www.youtube.com/embed/aD5BmGQ8mLU" 
+                            title="ScienThush Viral Hit" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="content-info">
+                    <h3 class="content-title">Viral ScienThush Hit</h3>
+                    <p class="content-description">
+                        One of the most successful ScienThush videos that went viral across multiple platforms, 
+                        demonstrating the power of authentic storytelling and social commentary.
+                    </p>
+                    <a href="https://youtu.be/aD5BmGQ8mLU" target="_blank" class="content-link">
+                        <i class="fab fa-youtube"></i>
+                        Watch on YouTube
+                    </a>
+                </div>
+            </div>
+        </div>
+        @endif
+    </div>
+</section>
+@endif
+
 <!-- Projects Section -->
 <section id="projects" class="projects-section">
     <div class="projects-container">
@@ -1272,7 +3013,7 @@
                         DU
                     </div>
                     <div>
-                        <h4 style="color: var(--text-light); margin: 0;">University Colleague</h4>
+                        <h4 style="color: var(--text-dark); margin: 0;">University Colleague</h4>
                         <p style="color: var(--text-muted); margin: 0; font-size: 0.9rem;">Computer Science Department</p>
                     </div>
                 </div>
@@ -1288,7 +3029,7 @@
                         BC
                     </div>
                     <div>
-                        <h4 style="color: var(--text-light); margin: 0;">Brand Collaborator</h4>
+                        <h4 style="color: var(--text-dark); margin: 0;">Brand Collaborator</h4>
                         <p style="color: var(--text-muted); margin: 0; font-size: 0.9rem;">Marketing Professional</p>
                     </div>
                 </div>
@@ -1304,7 +3045,7 @@
                         CF
                     </div>
                     <div>
-                        <h4 style="color: var(--text-light); margin: 0;">Community Follower</h4>
+                        <h4 style="color: var(--text-dark); margin: 0;">Community Follower</h4>
                         <p style="color: var(--text-muted); margin: 0; font-size: 0.9rem;">Content Enthusiast</p>
                     </div>
                 </div>
@@ -1585,6 +3326,48 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
         submitBtn.style.background = 'linear-gradient(45deg, var(--primary-color), var(--secondary-color))';
         this.reset();
     }, 3000);
+});
+
+// ScienThush Platform Switching
+document.addEventListener('DOMContentLoaded', function() {
+    const platformTabs = document.querySelectorAll('.platform-tab');
+    const facebookContent = document.getElementById('facebook-content');
+    const youtubeContent = document.getElementById('youtube-content');
+
+    platformTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            // Remove active class from all tabs
+            platformTabs.forEach(t => t.classList.remove('active'));
+            
+            // Add active class to clicked tab
+            this.classList.add('active');
+
+            // Get platform data
+            const platform = this.getAttribute('data-platform');
+
+            // Hide all content
+            facebookContent.style.display = 'none';
+            youtubeContent.style.display = 'none';
+
+            // Show selected platform content
+            if (platform === 'facebook') {
+                facebookContent.style.display = 'grid';
+            } else if (platform === 'youtube') {
+                youtubeContent.style.display = 'grid';
+            }
+
+            // Add smooth animation
+            const activeContent = platform === 'facebook' ? facebookContent : youtubeContent;
+            activeContent.style.opacity = '0';
+            activeContent.style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+                activeContent.style.opacity = '1';
+                activeContent.style.transform = 'translateY(0)';
+                activeContent.style.transition = 'all 0.5s ease';
+            }, 50);
+        });
+    });
 });
 </script>
 
