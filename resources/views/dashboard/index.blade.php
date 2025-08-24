@@ -456,27 +456,45 @@
         </div>
         <nav class="nav-menu">
             <div class="nav-item">
-                <a href="{{ route('dashboard') }}" class="nav-link active">
+                <a href="{{ route('dashboard.index') }}" class="nav-link active">
                     <i class="fas fa-home"></i>
                     Dashboard
                 </a>
             </div>
             <div class="nav-item">
-                <a href="{{ route('dashboard.profile') }}" class="nav-link">
+                <a href="{{ route('dashboard.personal-details') }}" class="nav-link">
                     <i class="fas fa-user"></i>
                     Profile
                 </a>
             </div>
             <div class="nav-item">
-                <a href="{{ route('dashboard.projects.index') }}" class="nav-link">
+                <a href="{{ route('dashboard.projects') }}" class="nav-link">
                     <i class="fas fa-code"></i>
                     Projects
                 </a>
             </div>
             <div class="nav-item">
-                <a href="{{ route('dashboard.skills.index') }}" class="nav-link">
+                <a href="{{ route('dashboard.skills') }}" class="nav-link">
                     <i class="fas fa-cogs"></i>
                     Skills
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="{{ route('dashboard.education') }}" class="nav-link">
+                    <i class="fas fa-graduation-cap"></i>
+                    Education
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="{{ route('dashboard.experiences') }}" class="nav-link">
+                    <i class="fas fa-briefcase"></i>
+                    Experience
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="{{ route('dashboard.achievements') }}" class="nav-link">
+                    <i class="fas fa-trophy"></i>
+                    Achievements
                 </a>
             </div>
             <div class="nav-item">
@@ -601,7 +619,7 @@
                 </div>
                 <div class="action-title">Update Profile</div>
                 <div class="action-desc">Keep your personal information up to date</div>
-                <a href="{{ route('dashboard.profile') }}" class="btn btn-secondary">Edit Profile</a>
+                <a href="{{ route('dashboard.personal-details') }}" class="btn btn-secondary">Edit Profile</a>
             </div>
             <div class="action-card">
                 <div class="action-icon">

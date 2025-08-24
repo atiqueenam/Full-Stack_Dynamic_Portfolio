@@ -36,9 +36,17 @@ class LoginController extends Controller
         $credentials = $request->only('email', 'password');
         $remember = $request->has('remember');
 
+        // Debug: Check if user exists
+        $user = \App\Models\User::where('email', $credentials['email'])->first();
+        if (!$user) {
+            return redirect()->back()
+                ->withErrors(['email' => 'No account found with this email address.'])
+                ->withInput($request->only('email'));
+        }
+
         if (Auth::attempt($credentials, $remember)) {
             $request->session()->regenerate();
-            return redirect()->intended('/dashboard');
+            return redirect()->intended(route('dashboard.index'))->with('success', 'Login successful!');
         }
 
         return redirect()->back()

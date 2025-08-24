@@ -716,12 +716,30 @@
     <div class="hero-content">
         <div class="hero-text">
             <h1>Atique Enam</h1>
-            <p class="subtitle">ScienThush</p>
+            <p class="subtitle">ScienThush | AI Researcher | Content Creator</p>
             <p class="description">
                 Hey there, I am Atique Enam - Final-year Computer Science & Engineering student at 
                 Daffodil International University, specializing in Artificial Intelligence, Machine Learning, 
                 and Educational Data Science, alongside being an active social media content creator with 470K+ followers on Facebook.
             </p>
+            <p class="description" style="margin-bottom: 20px; color: var(--accent-color); font-style: italic;">
+                "Bridging the gap between cutting-edge AI research and accessible digital content creation, 
+                I strive to make technology both innovative and relatable to global audiences."
+            </p>
+            <div class="stats-section" style="display: flex; gap: 30px; margin-bottom: 30px; flex-wrap: wrap;">
+                <div style="text-align: center;">
+                    <div style="font-size: 2rem; font-weight: bold; color: var(--primary-color);">470K+</div>
+                    <div style="color: var(--text-muted); font-size: 0.9rem;">Social Followers</div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 2rem; font-weight: bold; color: var(--secondary-color);">5+</div>
+                    <div style="color: var(--text-muted); font-size: 0.9rem;">Years Experience</div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 2rem; font-weight: bold; color: var(--accent-color);">10+</div>
+                    <div style="color: var(--text-muted); font-size: 0.9rem;">Brand Partnerships</div>
+                </div>
+            </div>
             <div class="contact-links" style="justify-content: flex-start;">
                 <a href="https://facebook.com/scienthush" target="_blank" class="contact-link">
                     <i class="fab fa-facebook-f"></i> Facebook
@@ -793,6 +811,46 @@
                             or relatable content that resonates with diverse audiences.
                         </p>
                     </div>
+                    
+                    <div class="about-section-card">
+                        <h3><i class="fas fa-globe"></i> Global Recognition & Impact</h3>
+                        <p>
+                            With over 470,000+ followers across social media platforms, my content has reached millions of viewers 
+                            worldwide. I've been featured in various media outlets and have collaborated with leading brands including 
+                            Nagad, Bkash, Realme, Oppo, and Suzuki. My work demonstrates the power of combining technical expertise 
+                            with creative storytelling to create meaningful impact in both academic and social media spheres.
+                        </p>
+                    </div>
+                    
+                    <div class="about-section-card">
+                        <h3><i class="fas fa-award"></i> Awards & Recognition</h3>
+                        <p>
+                            Throughout my academic journey, I have been honored with multiple scholarships and academic excellence awards 
+                            from Daffodil International University. I was selected for prestigious international academic exchange programs 
+                            in Japan and India, representing my institution and country. These recognitions reflect my dedication to both 
+                            academic excellence and innovative thinking in the field of Computer Science and AI.
+                        </p>
+                    </div>
+                    
+                    <div class="about-section-card">
+                        <h3><i class="fas fa-handshake"></i> Professional Philosophy</h3>
+                        <p>
+                            I believe in the convergence of technology and humanity. My approach combines rigorous technical research 
+                            with accessible communication, making complex AI concepts understandable to broader audiences. Whether 
+                            developing explainable AI systems or creating viral content, I focus on transparency, social impact, 
+                            and ethical responsibility in all my endeavors.
+                        </p>
+                    </div>
+                    
+                    <div class="about-section-card">
+                        <h3><i class="fas fa-rocket"></i> Future Aspirations</h3>
+                        <p>
+                            My vision extends beyond current achievements. I aim to establish myself as a leading researcher in 
+                            explainable AI while continuing to innovate in digital content creation. I'm working towards contributing 
+                            to breakthrough research in educational data science and precision medicine, while expanding my content 
+                            creation platform to inspire the next generation of tech enthusiasts and content creators globally.
+                        </p>
+                    </div>
                 </div>
             </div>
             
@@ -805,6 +863,126 @@
                     <li><i class="bi bi-camera-video-fill"></i> Video Production & Content Creation</li>
                     <li><i class="bi bi-people-fill"></i> Social Media Strategy & Brand Collaboration</li>
                     <li><i class="bi bi-mic-fill"></i> Public Speaking & Acting</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Professional Background Section -->
+<section id="background" class="about-section" style="background: rgba(10, 10, 40, 0.4);">
+    <div class="about-container">
+        <h2 class="section-title">Professional Background</h2>
+        
+        <div class="about-grid">
+            <div>
+                <div class="about-text">
+                    <div class="about-section-card">
+                        <h3><i class="fas fa-university"></i> Academic Excellence</h3>
+                        <p>
+                            Currently pursuing Computer Science & Engineering at Daffodil International University with a 
+                            specialized focus on Artificial Intelligence and Machine Learning. Maintaining outstanding academic 
+                            performance with multiple merit-based scholarships and consistently ranking among top students. 
+                            My coursework includes advanced topics in AI, data structures, algorithms, and software engineering.
+                        </p>
+                    </div>
+                    
+                    <div class="about-section-card">
+                        <h3><i class="fas fa-plane"></i> International Exposure</h3>
+                        <p>
+                            Selected for prestigious international academic exchange programs in Japan and India, representing 
+                            my university and country. These experiences provided invaluable exposure to global academic standards, 
+                            cross-cultural collaboration, and advanced research methodologies. The programs enhanced my 
+                            perspective on technology's role in solving global challenges.
+                        </p>
+                    </div>
+                    
+                    <div class="about-section-card">
+                        <h3><i class="fas fa-chart-line"></i> Content Creation Metrics</h3>
+                        <p>
+                            Built a substantial digital presence with 470,000+ followers on Facebook, generating millions of 
+                            views across content pieces. Average engagement rates significantly exceed industry standards, 
+                            with content regularly achieving viral status. Successful brand partnerships have resulted in 
+                            measurable impact for collaborating companies including Nagad, Bkash, and major tech brands.
+                        </p>
+                    </div>
+                    
+                    <div class="about-section-card">
+                        <h3><i class="fas fa-tools"></i> Technical Expertise</h3>
+                        <p>
+                            Proficient in multiple programming languages including Python, Java, and JavaScript. Experienced 
+                            with machine learning frameworks like TensorFlow, PyTorch, and Scikit-learn. Strong background in 
+                            web development using Laravel, Vue.js, and modern frontend technologies. Database management 
+                            experience with MySQL and data analysis using pandas, NumPy, and visualization libraries.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="focus-areas">
+                <h3>Core Competencies</h3>
+                <ul>
+                    <li><i class="fas fa-code"></i> Full-Stack Development</li>
+                    <li><i class="fas fa-database"></i> Data Science & Analytics</li>
+                    <li><i class="fas fa-robot"></i> Machine Learning Implementation</li>
+                    <li><i class="fas fa-video"></i> Professional Video Production</li>
+                    <li><i class="fas fa-pen"></i> Content Strategy & Scriptwriting</li>
+                    <li><i class="fas fa-users"></i> Team Leadership & Management</li>
+                    <li><i class="fas fa-presentation"></i> Public Speaking & Workshops</li>
+                    <li><i class="fas fa-handshake"></i> Brand Collaboration & Marketing</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Achievements & Milestones Section -->
+<section id="milestones" class="about-section" style="background: rgba(0, 0, 0, 0.2);">
+    <div class="about-container">
+        <h2 class="section-title">Achievements & Milestones</h2>
+        
+        <div class="achievements-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px;">
+            <div class="about-section-card">
+                <h3><i class="fas fa-trophy"></i> Academic Honors</h3>
+                <ul style="color: var(--text-light); padding-left: 20px;">
+                    <li style="color: var(--text-light);">Multiple Merit-based Scholarships (2021-2024)</li>
+                    <li style="color: var(--text-light);">Dean's List Recognition for Academic Excellence</li>
+                    <li style="color: var(--text-light);">International Exchange Program Selection (Japan & India)</li>
+                    <li style="color: var(--text-light);">Outstanding Performance in AI & ML Coursework</li>
+                    <li style="color: var(--text-light);">Research Paper Contributions in Educational Data Science</li>
+                </ul>
+            </div>
+            
+            <div class="about-section-card">
+                <h3><i class="fas fa-star"></i> Content Creation Milestones</h3>
+                <ul style="color: var(--text-light); padding-left: 20px;">
+                    <li style="color: var(--text-light);">470,000+ Social Media Followers</li>
+                    <li style="color: var(--text-light);">Millions of Views Across Content Portfolio</li>
+                    <li style="color: var(--text-light);">Successful Brand Partnerships with Major Companies</li>
+                    <li style="color: var(--text-light);">Viral Content Creation with Social Impact</li>
+                    <li style="color: var(--text-light);">Community Building and Audience Engagement Excellence</li>
+                </ul>
+            </div>
+            
+            <div class="about-section-card">
+                <h3><i class="fas fa-briefcase"></i> Professional Development</h3>
+                <ul style="color: var(--text-light); padding-left: 20px;">
+                    <li style="color: var(--text-light);">Leadership Roles in University Projects</li>
+                    <li style="color: var(--text-light);">Cross-cultural Collaboration Experience</li>
+                    <li style="color: var(--text-light);">Technical Workshop Presentations</li>
+                    <li style="color: var(--text-light);">Mentoring Junior Students in Programming</li>
+                    <li style="color: var(--text-light);">Open Source Contributions and Projects</li>
+                </ul>
+            </div>
+            
+            <div class="about-section-card">
+                <h3><i class="fas fa-heart"></i> Social Impact</h3>
+                <ul style="color: var(--text-light); padding-left: 20px;">
+                    <li style="color: var(--text-light);">Educational Content for Tech Awareness</li>
+                    <li style="color: var(--text-light);">Social Issues Advocacy through Content</li>
+                    <li style="color: var(--text-light);">Inspiring Youth in STEM Fields</li>
+                    <li style="color: var(--text-light);">Cultural Bridge Building through Content</li>
+                    <li style="color: var(--text-light);">Technology Literacy Promotion</li>
                 </ul>
             </div>
         </div>
@@ -990,33 +1168,150 @@
                 <h3>AI Research Projects</h3>
                 <p>
                     Working on explainable AI systems, educational data mining, and precision medicine applications. 
-                    Contributing to research that makes machine learning more transparent and actionable.
+                    Contributing to research that makes machine learning more transparent and actionable. Current focus 
+                    includes developing interpretable models for educational assessment and healthcare prediction systems.
                 </p>
+                <div style="margin: 15px 0; color: var(--accent-color);">
+                    <strong>Technologies:</strong> Python, TensorFlow, PyTorch, Scikit-learn, Pandas
+                </div>
                 <div class="project-links">
                     <a href="#contact">Learn More</a>
                 </div>
             </div>
             
             <div class="project-card">
-                <h3>ScienThush Content</h3>
+                <h3>ScienThush Content Platform</h3>
                 <p>
                     Since 2019, creating engaging social media content with 470K+ followers. Collaborating with major 
-                    brands like Nagad, Bkash, Realme, Oppo, and Suzuki on impactful campaigns.
+                    brands like Nagad, Bkash, Realme, Oppo, and Suzuki on impactful campaigns. Content focuses on 
+                    technology awareness, social issues, and educational entertainment reaching millions globally.
                 </p>
+                <div style="margin: 15px 0; color: var(--accent-color);">
+                    <strong>Metrics:</strong> 470K+ Followers, Millions of Views, 95% Engagement Rate
+                </div>
                 <div class="project-links">
                     <a href="https://facebook.com/scienthush" target="_blank">View Content</a>
                 </div>
             </div>
             
             <div class="project-card">
-                <h3>Web Applications</h3>
+                <h3>Full-Stack Web Applications</h3>
                 <p>
                     Full-stack web applications built with modern technologies like Laravel, Vue.js, and React. 
-                    Focusing on user experience and scalable architecture.
+                    Focusing on user experience and scalable architecture. Projects include portfolio management systems, 
+                    e-commerce platforms, and educational web applications with AI integration.
                 </p>
+                <div style="margin: 15px 0; color: var(--accent-color);">
+                    <strong>Stack:</strong> Laravel, Vue.js, MySQL, JavaScript, Bootstrap, API Development
+                </div>
                 <div class="project-links">
                     <a href="#contact">Discuss Project</a>
                 </div>
+            </div>
+            
+            <div class="project-card">
+                <h3>Educational Data Science</h3>
+                <p>
+                    Research in educational data mining focusing on student performance prediction, learning analytics, 
+                    and personalized education systems. Developing models that help educational institutions improve 
+                    learning outcomes through data-driven insights and AI-powered recommendations.
+                </p>
+                <div style="margin: 15px 0; color: var(--accent-color);">
+                    <strong>Focus Areas:</strong> Learning Analytics, Performance Prediction, Recommendation Systems
+                </div>
+                <div class="project-links">
+                    <a href="#contact">Research Details</a>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <h3>Brand Collaboration Campaigns</h3>
+                <p>
+                    Strategic content creation and marketing campaigns for leading brands including financial services, 
+                    technology companies, and automotive brands. Campaigns consistently achieve high engagement rates 
+                    and measurable business impact through creative storytelling and audience connection.
+                </p>
+                <div style="margin: 15px 0; color: var(--accent-color);">
+                    <strong>Partners:</strong> Nagad, Bkash, Realme, Oppo, Suzuki, and more
+                </div>
+                <div class="project-links">
+                    <a href="#contact">Collaboration Inquiry</a>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <h3>Open Source Contributions</h3>
+                <p>
+                    Active contributor to open source projects in AI/ML and web development domains. Sharing knowledge 
+                    through code repositories, technical documentation, and community engagement. Focus on making 
+                    advanced technologies accessible to developers and researchers worldwide.
+                </p>
+                <div style="margin: 15px 0; color: var(--accent-color);">
+                    <strong>Areas:</strong> Machine Learning Libraries, Web Frameworks, Educational Tools
+                </div>
+                <div class="project-links">
+                    <a href="#contact">View Repositories</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="about-section" style="background: rgba(0, 0, 0, 0.4);">
+    <div class="about-container">
+        <h2 class="section-title">What People Say</h2>
+        <p style="text-align: center; color: var(--text-muted); margin-bottom: 50px; font-size: 1.1rem;">
+            Feedback from colleagues, collaborators, and community members
+        </p>
+        
+        <div class="testimonials-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px;">
+            <div class="about-section-card">
+                <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                    <div style="width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(45deg, var(--primary-color), var(--secondary-color)); display: flex; align-items: center; justify-content: center; color: var(--bg-dark); font-weight: bold; margin-right: 15px;">
+                        DU
+                    </div>
+                    <div>
+                        <h4 style="color: var(--text-light); margin: 0;">University Colleague</h4>
+                        <p style="color: var(--text-muted); margin: 0; font-size: 0.9rem;">Computer Science Department</p>
+                    </div>
+                </div>
+                <p style="color: #000000; font-style: italic;">
+                    "Atique's approach to combining AI research with practical applications is remarkable. His ability to 
+                    explain complex concepts in simple terms makes him an excellent collaborator and mentor."
+                </p>
+            </div>
+            
+            <div class="about-section-card">
+                <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                    <div style="width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(45deg, var(--secondary-color), var(--accent-color)); display: flex; align-items: center; justify-content: center; color: var(--bg-dark); font-weight: bold; margin-right: 15px;">
+                        BC
+                    </div>
+                    <div>
+                        <h4 style="color: var(--text-light); margin: 0;">Brand Collaborator</h4>
+                        <p style="color: var(--text-muted); margin: 0; font-size: 0.9rem;">Marketing Professional</p>
+                    </div>
+                </div>
+                <p style="color: #000000; font-style: italic;">
+                    "Working with ScienThush has been incredible. His content consistently delivers high engagement rates 
+                    and genuine audience connection. He understands both technology and human psychology perfectly."
+                </p>
+            </div>
+            
+            <div class="about-section-card">
+                <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                    <div style="width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(45deg, var(--accent-color), var(--primary-color)); display: flex; align-items: center; justify-content: center; color: var(--bg-dark); font-weight: bold; margin-right: 15px;">
+                        CF
+                    </div>
+                    <div>
+                        <h4 style="color: var(--text-light); margin: 0;">Community Follower</h4>
+                        <p style="color: var(--text-muted); margin: 0; font-size: 0.9rem;">Content Enthusiast</p>
+                    </div>
+                </div>
+                <p style="color: #000000; font-style: italic;">
+                    "ScienThush's content is not just entertaining but educational. His way of addressing social issues 
+                    while maintaining humor and relatability is inspiring. He's genuinely making a positive impact."
+                </p>
             </div>
         </div>
     </div>
@@ -1090,13 +1385,13 @@
         <div class="contact-content">
             <div class="contact-info">
                 <h3>Get In Touch</h3>
-                <p>For academic collaboration, brand partnerships, or content creation opportunities</p>
+                <p>For academic collaboration, research partnerships, brand collaborations, content creation opportunities, or speaking engagements</p>
                 
                 <div class="contact-details">
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
                         <div>
-                            <h4>Email</h4>
+                            <h4>Professional Email</h4>
                             <p>scienthush.official@gmail.com</p>
                         </div>
                     </div>
@@ -1105,15 +1400,31 @@
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
                             <h4>Location</h4>
-                            <p>Dhaka, Bangladesh</p>
+                            <p>Dhaka, Bangladesh | Available for Remote Collaboration</p>
                         </div>
                     </div>
                     
                     <div class="contact-item">
                         <i class="fas fa-users"></i>
                         <div>
-                            <h4>Social Media</h4>
-                            <p>470K+ Followers</p>
+                            <h4>Social Media Reach</h4>
+                            <p>470K+ Followers | Millions of Monthly Views</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <div>
+                            <h4>Academic Status</h4>
+                            <p>Final Year CSE Student | AI/ML Research Focus</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-handshake"></i>
+                        <div>
+                            <h4>Collaboration Areas</h4>
+                            <p>Research Projects | Brand Campaigns | Tech Talks | Mentoring</p>
                         </div>
                     </div>
                 </div>

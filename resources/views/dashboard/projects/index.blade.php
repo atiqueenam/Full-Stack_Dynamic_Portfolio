@@ -1,53 +1,228 @@
 @extends('index')
 @section('main-content')
-@push('styles')
-<title>Projects - Dashboard</title>
 <style>
-:root {
-  --primary-color: #00f5ff;
-  --secondary-color: #ff0080;
-  --accent-color: #7b68ee;
-  --bg-dark: #0a0a0a;
-  --bg-card: rgba(255, 255, 255, 0.05);
-  --text-light: #ffffff;
-  --text-muted: #b0b0b0;
+.simple-dashboard {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-.particles-container {
-  position: fixed;
-  top: 0;
-  left: 0;
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: #007bff;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #0056b3;
+  color: white;
+}
+
+.btn-success {
+  background: #28a745;
+  color: white;
+}
+
+.btn-success:hover {
+  background: #218838;
+}
+
+.btn-warning {
+  background: #ffc107;
+  color: #212529;
+}
+
+.btn-warning:hover {
+  background: #e0a800;
+}
+
+.btn-danger {
+  background: #dc3545;
+  color: white;
+}
+
+.btn-danger:hover {
+  background: #c82333;
+}
+
+.btn-sm {
+  padding: 5px 12px;
+  font-size: 0.875rem;
+}
+
+.projects-table {
   width: 100%;
-  height: 100%;
-  z-index: -1;
-  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
-  overflow: hidden;
+  border-collapse: collapse;
+  margin-top: 20px;
 }
 
-.particle {
-  position: absolute;
-  width: 2px;
-  height: 2px;
-  background: var(--primary-color);
-  border-radius: 50%;
-  animation: float 8s infinite ease-in-out;
-  opacity: 0.7;
+.projects-table th,
+.projects-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #e9ecef;
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.7; }
-  50% { transform: translateY(-100px) rotate(180deg); opacity: 1; }
+.projects-table th {
+  background: #f8f9fa;
+  font-weight: 600;
 }
 
-.dashboard-container {
-  min-height: 100vh;
-  padding: 100px 20px 50px;
-  position: relative;
+.projects-table tr:hover {
+  background: #f8f9fa;
 }
 
-.dashboard-content {
-  max-width: 1200px;
-  margin: 0 auto;
+.project-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.status-badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.status-active {
+  background: #d4edda;
+  color: #155724;
+}
+
+.status-inactive {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.alert-success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+
+.back-link {
+  margin-bottom: 20px;
+}
+
+.back-link a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.back-link a:hover {
+  text-decoration: underline;
+}
+</style>
+
+<div class="simple-dashboard">
+  <div class="back-link">
+    <a href="{{ route('dashboard.index') }}">← Back to Dashboard</a>
+  </div>
+
+  <div class="dashboard-header">
+    <h1>Manage Projects</h1>
+    <a href="{{ route('dashboard.projects.create') }}" class="btn btn-success">
+      <i class="fas fa-plus"></i> Add New Project
+    </a>
+  </div>
+
+  @if(session('success'))
+    <div class="alert alert-success">
+      {{ session('success') }}
+    </div>
+  @endif
+
+  @if($projects->count() > 0)
+    <table class="projects-table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Category</th>
+          <th>Technologies</th>
+          <th>Status</th>
+          <th>Featured</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach($projects as $project)
+          <tr>
+            <td>
+              <strong>{{ $project->title }}</strong>
+              <br>
+              <small style="color: #666;">{{ Str::limit($project->description, 50) }}</small>
+            </td>
+            <td>{{ $project->category ?? 'General' }}</td>
+            <td>{{ $project->technologies ?? 'N/A' }}</td>
+            <td>
+              <span class="status-badge {{ $project->status == 'completed' ? 'status-active' : 'status-inactive' }}">
+                {{ ucfirst($project->status ?? 'active') }}
+              </span>
+            </td>
+            <td>
+              <span class="status-badge {{ $project->is_featured ? 'status-active' : 'status-inactive' }}">
+                {{ $project->is_featured ? 'Yes' : 'No' }}
+              </span>
+            </td>
+            <td class="project-actions">
+              <a href="{{ route('dashboard.projects.edit', $project) }}" class="btn btn-warning btn-sm">
+                <i class="fas fa-edit"></i> Edit
+              </a>
+              <form method="POST" action="{{ route('dashboard.projects.destroy', $project) }}" 
+                    style="display: inline;" 
+                    onsubmit="return confirm('Are you sure you want to delete this project?')">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger btn-sm">
+                  <i class="fas fa-trash"></i> Delete
+                </button>
+              </form>
+            </td>
+          </tr>
+        @endforeach
+      </tbody>
+    </table>
+  @else
+    <div style="text-align: center; padding: 40px; color: #666;">
+      <i class="fas fa-folder-open" style="font-size: 3rem; margin-bottom: 20px; color: #ddd;"></i>
+      <h3>No Projects Yet</h3>
+      <p>Start by adding your first project to showcase your work.</p>
+      <a href="{{ route('dashboard.projects.create') }}" class="btn btn-success">
+        <i class="fas fa-plus"></i> Add Your First Project
+      </a>
+    </div>
+  @endif
+</div>
+@endsection
 }
 
 .page-header {

@@ -9,15 +9,18 @@ class Achievement extends Model
 {
     protected $fillable = [
         'user_id',
-        'title',
-        'description',
-        'issuer',
+        'name',
+        'type',
+        'certification',
+        'organization',
         'date',
-        'url'
+        'images',
+        'category'
     ];
 
     protected $casts = [
-        'date' => 'date'
+        'date' => 'datetime',
+        'images' => 'array'
     ];
 
     public function user(): BelongsTo

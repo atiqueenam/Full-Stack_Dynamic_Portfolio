@@ -92,7 +92,7 @@ class PortfolioController extends Controller
     // Projects Management
     public function projects()
     {
-        $projects = Project::latest()->get();
+        $projects = Project::where('user_id', Auth::id())->latest()->get();
         return view('dashboard.projects.index', compact('projects'));
     }
     
@@ -104,23 +104,31 @@ class PortfolioController extends Controller
     public function storeProject(Request $request)
     {
         $validated = $request->validate([
-            'title' => 'required|string|max:255',
+            'name' => 'required|string|max:255',
             'description' => 'required|string',
-            'technologies' => 'required|string',
-            'project_url' => 'nullable|url',
+            'type' => 'required|in:personal,client,academic',
+            'status' => 'required|in:active,inactive,in-progress',
+            'tools' => 'required|string',
             'github_url' => 'nullable|url',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'is_featured' => 'boolean',
-            'start_date' => 'nullable|date',
-            'end_date' => 'nullable|date|after:start_date'
+            'demo_url' => 'nullable|url',
+            'reference' => 'nullable|string|max:255',
+            'keywords' => 'nullable|string',
+            'images' => 'nullable|string'
         ]);
         
         $validated['user_id'] = Auth::id();
         
-        // Handle image upload
-        if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('projects', 'public');
-            $validated['image'] = $imagePath;
+        // Handle JSON fields
+        if ($request->filled('tools')) {
+            $validated['tools'] = json_encode(explode(',', $request->tools));
+        }
+        if ($request->filled('keywords')) {
+            $validated['keywords'] = json_encode(explode(',', $request->keywords));
+        }
+        if ($request->filled('images')) {
+            $validated['images'] = json_encode(explode(',', $request->images));
+        } else {
+            $validated['images'] = json_encode([]);
         }
         
         Project::create($validated);
@@ -136,26 +144,27 @@ class PortfolioController extends Controller
     public function updateProject(Request $request, Project $project)
     {
         $validated = $request->validate([
-            'title' => 'required|string|max:255',
+            'name' => 'required|string|max:255',
             'description' => 'required|string',
-            'technologies' => 'required|string',
-            'project_url' => 'nullable|url',
+            'type' => 'required|in:personal,client,academic',
+            'status' => 'required|in:active,inactive,in-progress',
+            'tools' => 'required|string',
             'github_url' => 'nullable|url',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'is_featured' => 'boolean',
-            'start_date' => 'nullable|date',
-            'end_date' => 'nullable|date|after:start_date'
+            'demo_url' => 'nullable|url',
+            'reference' => 'nullable|string|max:255',
+            'keywords' => 'nullable|string',
+            'images' => 'nullable|string'
         ]);
         
-        // Handle image upload
-        if ($request->hasFile('image')) {
-            // Delete old image if exists
-            if ($project->image) {
-                Storage::delete('public/' . $project->image);
-            }
-            
-            $imagePath = $request->file('image')->store('projects', 'public');
-            $validated['image'] = $imagePath;
+        // Handle JSON fields
+        if ($request->filled('tools')) {
+            $validated['tools'] = json_encode(explode(',', $request->tools));
+        }
+        if ($request->filled('keywords')) {
+            $validated['keywords'] = json_encode(explode(',', $request->keywords));
+        }
+        if ($request->filled('images')) {
+            $validated['images'] = json_encode(explode(',', $request->images));
         }
         
         $project->update($validated);
@@ -178,7 +187,7 @@ class PortfolioController extends Controller
     // Skills Management
     public function skills()
     {
-        $skills = Skill::orderBy('category')->orderBy('level', 'desc')->get();
+        $skills = Skill::where('user_id', Auth::id())->orderBy('category')->orderBy('level', 'desc')->get();
         return view('dashboard.skills.index', compact('skills'));
     }
     
@@ -232,7 +241,7 @@ class PortfolioController extends Controller
     // Experience Management
     public function experiences()
     {
-        $experiences = Experience::orderBy('start_date', 'desc')->get();
+        $experiences = Experience::where('user_id', Auth::id())->orderBy('from_date', 'desc')->get();
         return view('dashboard.experiences.index', compact('experiences'));
     }
     
@@ -292,7 +301,7 @@ class PortfolioController extends Controller
     // Education Management
     public function education()
     {
-        $education = Education::orderBy('start_date', 'desc')->get();
+        $education = Education::where('user_id', Auth::id())->orderBy('enrolled_year', 'desc')->get();
         return view('dashboard.education.index', compact('education'));
     }
     
@@ -354,7 +363,7 @@ class PortfolioController extends Controller
     // Achievements Management
     public function achievements()
     {
-        $achievements = Achievement::orderBy('date', 'desc')->get();
+        $achievements = Achievement::where('user_id', Auth::id())->orderBy('date', 'desc')->get();
         return view('dashboard.achievements.index', compact('achievements'));
     }
     

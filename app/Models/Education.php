@@ -7,22 +7,21 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Education extends Model
 {
+    protected $table = 'educations';
+    
     protected $fillable = [
         'user_id',
-        'institution',
-        'degree',
-        'field_of_study',
-        'description',
-        'start_date',
-        'end_date',
-        'gpa',
-        'location'
+        'type',
+        'name',
+        'institute',
+        'enrolled_year',
+        'passing_year',
+        'grade'
     ];
 
     protected $casts = [
-        'start_date' => 'date',
-        'end_date' => 'date',
-        'gpa' => 'decimal:2'
+        'enrolled_year' => 'integer',
+        'passing_year' => 'integer'
     ];
 
     public function user(): BelongsTo

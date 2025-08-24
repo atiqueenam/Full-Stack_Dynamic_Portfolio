@@ -45,6 +45,6 @@ class RegisterController extends Controller
         // Log the user in after registration
         Auth::login($user);
 
-        return redirect()->route('dashboard')->with('success', 'Registration successful! Welcome to your portfolio dashboard.');
+        return redirect()->route('dashboard.index')->with('success', 'Registration successful! Welcome to your portfolio dashboard.');
     }
 }

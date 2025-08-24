@@ -1,53 +1,213 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add New Project - Portfolio Dashboard</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <style>
-        :root {
-            --primary-bg: #0a0e1a;
-            --secondary-bg: #1a1f2e;
-            --accent-bg: #252d42;
-            --primary-text: #ffffff;
-            --secondary-text: #a8b2d1;
-            --accent-color: #00d4ff;
-            --success-color: #00ff88;
-            --warning-color: #ffb347;
-            --danger-color: #ff4757;
-            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --gradient-2: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
-            --glass-bg: rgba(255, 255, 255, 0.1);
-            --glass-border: rgba(255, 255, 255, 0.2);
-        }
+@extends('index')
+@section('main-content')
+<style>
+.simple-dashboard {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+.dashboard-header {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #f0f0f0;
+}
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: var(--primary-bg);
-            color: var(--primary-text);
-            min-height: 100vh;
-        }
+.form-group {
+  margin-bottom: 20px;
+}
 
-        .bg-animation {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 40% 80%, rgba(120, 219, 255, 0.3) 0%, transparent 50%);
-            animation: backgroundMove 20s ease-in-out infinite;
-            z-index: -1;
-        }
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #333;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0,123,255,0.25);
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-success {
+  background: #28a745;
+  color: white;
+}
+
+.btn-success:hover {
+  background: #218838;
+}
+
+.btn-secondary {
+  background: #6c757d;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: #545b62;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.back-link {
+  margin-bottom: 20px;
+}
+
+.back-link a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.back-link a:hover {
+  text-decoration: underline;
+}
+
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.alert-danger {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+.error-list {
+  margin: 0;
+  padding-left: 20px;
+}
+</style>
+
+<div class="simple-dashboard">
+  <div class="back-link">
+    <a href="{{ route('dashboard.projects') }}">← Back to Projects</a>
+  </div>
+
+  <div class="dashboard-header">
+    <h1>Add New Project</h1>
+    <p>Create a new project for your portfolio</p>
+  </div>
+
+  @if ($errors->any())
+    <div class="alert alert-danger">
+      <strong>Please fix the following errors:</strong>
+      <ul class="error-list">
+        @foreach ($errors->all() as $error)
+          <li>{{ $error }}</li>
+        @endforeach
+      </ul>
+    </div>
+  @endif
+
+  <form method="POST" action="{{ route('dashboard.projects.store') }}" enctype="multipart/form-data">
+    @csrf
+    
+    <div class="form-group">
+      <label for="name">Project Name *</label>
+      <input type="text" id="name" name="name" class="form-control" value="{{ old('name') }}" required>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description *</label>
+      <textarea id="description" name="description" class="form-control" required>{{ old('description') }}</textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="type">Project Type *</label>
+      <select id="type" name="type" class="form-control" required>
+        <option value="">Select Type</option>
+        <option value="personal" {{ old('type') == 'personal' ? 'selected' : '' }}>Personal</option>
+        <option value="client" {{ old('type') == 'client' ? 'selected' : '' }}>Client</option>
+        <option value="academic" {{ old('type') == 'academic' ? 'selected' : '' }}>Academic</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="status">Project Status *</label>
+      <select id="status" name="status" class="form-control" required>
+        <option value="">Select Status</option>
+        <option value="active" {{ old('status') == 'active' ? 'selected' : '' }}>Active</option>
+        <option value="inactive" {{ old('status') == 'inactive' ? 'selected' : '' }}>Inactive</option>
+        <option value="in-progress" {{ old('status') == 'in-progress' ? 'selected' : '' }}>In Progress</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="tools">Tools/Technologies Used *</label>
+      <input type="text" id="tools" name="tools" class="form-control" value="{{ old('tools') }}" required placeholder="e.g., Laravel, Vue.js, Python (comma separated)">
+    </div>
+
+    <div class="form-group">
+      <label for="github_url">GitHub URL</label>
+      <input type="url" id="github_url" name="github_url" class="form-control" value="{{ old('github_url') }}" placeholder="https://github.com/username/project">
+    </div>
+
+    <div class="form-group">
+      <label for="demo_url">Live Demo URL</label>
+      <input type="url" id="demo_url" name="demo_url" class="form-control" value="{{ old('demo_url') }}" placeholder="https://yourproject.com">
+    </div>
+
+    <div class="form-group">
+      <label for="reference">Reference/Client</label>
+      <input type="text" id="reference" name="reference" class="form-control" value="{{ old('reference') }}" placeholder="Client name or reference">
+    </div>
+
+    <div class="form-group">
+      <label for="keywords">Keywords</label>
+      <input type="text" id="keywords" name="keywords" class="form-control" value="{{ old('keywords') }}" placeholder="e.g., responsive, api, database (comma separated)">
+    </div>
+
+    <div class="form-group">
+      <label for="images">Image URLs</label>
+      <input type="text" id="images" name="images" class="form-control" value="{{ old('images') }}" placeholder="Image URLs (comma separated)">
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="btn btn-success">
+        <i class="fas fa-save"></i> Create Project
+      </button>
+      <a href="{{ route('dashboard.projects') }}" class="btn btn-secondary">
+        <i class="fas fa-times"></i> Cancel
+      </a>
+    </div>
+  </form>
+</div>
+@endsection
 
         @keyframes backgroundMove {
             0%, 100% { transform: translateX(0px) translateY(0px); }

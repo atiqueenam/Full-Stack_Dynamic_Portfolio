@@ -9,19 +9,16 @@ class Experience extends Model
 {
     protected $fillable = [
         'user_id',
-        'company',
-        'position',
-        'description',
-        'start_date',
-        'end_date',
-        'is_current',
-        'location'
+        'type',
+        'designation',
+        'organization',
+        'from_date',
+        'to_date'
     ];
 
     protected $casts = [
-        'start_date' => 'date',
-        'end_date' => 'date',
-        'is_current' => 'boolean'
+        'from_date' => 'date',
+        'to_date' => 'date'
     ];
 
     public function user(): BelongsTo

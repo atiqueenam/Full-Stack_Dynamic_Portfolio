@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\DashboardController;
@@ -8,6 +9,30 @@ use App\Http\Controllers\PortfolioController;
 
 // Main portfolio website route
 Route::get('/', [PortfolioController::class, 'index'])->name('home');
+
+// Simple dashboard redirect for convenience
+Route::get('/dashboard', function () {
+    if (Auth::check()) {
+        return redirect()->route('dashboard.index');
+    } else {
+        return redirect()->route('login')->with('message', 'Please log in to access the dashboard.');
+    }
+});
+
+// Debug route for testing
+Route::get('/test-auth', function () {
+    $user = \App\Models\User::first();
+    if ($user) {
+        return response()->json([
+            'user_exists' => true,
+            'email' => $user->email,
+            'password_set' => !empty($user->password),
+            'auth_check' => Auth::check(),
+            'session_driver' => config('session.driver')
+        ]);
+    }
+    return response()->json(['user_exists' => false]);
+});
 
 // Authentication routes
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');

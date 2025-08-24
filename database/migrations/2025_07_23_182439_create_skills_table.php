@@ -11,25 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-       Schema::create('skills', function (Blueprint $table) {
-    $table->id();
-    $table->foreignId('user_id')->constrained()->onDelete('cascade');
-    $table->string('name');
-    $table->string('category')->default('General');
-    $table->enum('type', ['technical', 'soft']);
-    $table->enum('level', ['beginner', 'intermediate', 'expert']);
-    $table->string('logo')->nullable();
-    $table->timestamps();
-});
-
-        Schema::table('skills', function (Blueprint $table) {
-            $table->foreign('user_id')
-                ->references('id')
-                ->on('users')
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
+        Schema::create('skills', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->string('name');
+            $table->string('category')->default('General');
+            $table->enum('type', ['technical', 'soft']);
+            $table->enum('level', ['beginner', 'intermediate', 'expert']);
+            $table->string('logo')->nullable();
+            $table->timestamps();
         });
-
     }
 
     /**

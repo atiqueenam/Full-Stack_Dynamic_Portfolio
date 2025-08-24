@@ -12,27 +12,19 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('projects', function (Blueprint $table) {
-    $table->id();
-    $table->foreignId('user_id')->constrained()->onDelete('cascade');
-    $table->string('name');
-    $table->text('description');
-    $table->string('github_url')->nullable();
-    $table->string('demo_url')->nullable();
-    $table->json('images');
-    $table->enum('type', ['personal', 'client', 'academic']);
-    $table->string('reference')->nullable();
-    $table->json('tools');
-    $table->json('keywords')->nullable();
-    $table->enum('status', ['active', 'inactive', 'in-progress']);
-    $table->timestamps();
-});
-
-        Schema::table('projects', function (Blueprint $table) {
-            $table->foreign('user_id')
-                ->references('id')
-                ->on('users')
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
+            $table->id();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->string('name');
+            $table->text('description');
+            $table->string('github_url')->nullable();
+            $table->string('demo_url')->nullable();
+            $table->json('images');
+            $table->enum('type', ['personal', 'client', 'academic']);
+            $table->string('reference')->nullable();
+            $table->json('tools');
+            $table->json('keywords')->nullable();
+            $table->enum('status', ['active', 'inactive', 'in-progress']);
+            $table->timestamps();
         });
     }
 
